@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="control_default" extends="struts-default" >
+		
+		<action name="control" class="work.control.action.ControlAction">
+			<result name="success">/page/control/control.jsp</result>
+		</action>
+		<action name="controlupdate" class="work.control.action.ControlUpdate">
+			<result name="success">/page/control/success.jsp</result>
+		</action>
+		<action name="jhsx" class="work.control.action.JhsxAction">
+			<result name="success">/page/control/jhsx.jsp</result>
+		</action>
+		<action name="jhsxadd" class="work.control.action.JhsxAddAction">
+			<result name="success">/page/control/jhsxsuccess.jsp</result>
+		</action>
+		<action name="hnconfigall" class="work.control.action.HnConfigAll">
+			<result name="success">/page/control/hnconfig.jsp</result>
+		</action>
+		<action name="configtoupdate" class="work.control.action.ConfigToUpdate">
+			<result name="success">/page/control/configtoupdate.jsp</result>
+		</action>
+		<action name="configupdate" class="work.control.action.ConfigUpdate">
+			<result name="success">/page/control/beforeconfig.jsp</result>
+		</action>
+		<action name="configadd" class="work.control.action.ConfigAdd">
+			<result name="success">/page/control/beforeconfig.jsp</result>
+		</action>
+		<action name="configdelete" class="work.control.action.ConfigDelete">
+			<result name="success">/page/control/beforeconfig.jsp</result>
+		</action>
+		<action name="importjhsx" class="work.control.action.ImportJhsx">
+			<result name="success">/page/control/jhsxsuccess.jsp</result>
+		</action>
+		<action name="importjihe" class="work.control.action.ImportJihe">
+			<result name="success">/page/public/successnoreturn.jsp</result>
+		</action>
+		<action name="importfxq" class="work.control.action.ImportFxq">
+			<result name="success">/page/public/successnoreturn.jsp</result>
+		</action>
+		<!-- opxz -->
+		<action name="opxz" class="work.control.action.BeforeOPXZ">
+			<result name="success">/page/control/opxz.jsp</result>
+		</action>
+		<action name="opxztoupdate" class="work.control.action.OPXZtoupdate">
+			<result name="success">/page/control/opxztoupdate.jsp</result>
+		</action>
+		<action name="opxzupdate" class="work.control.action.OPXZupdate">
+			<result name="success">/page/control/beforeopxz.jsp</result>
+		</action>
+		<action name="opxzadd" class="work.control.action.OPXZadd">
+			<result name="success">/page/control/beforeopxz.jsp</result>
+		</action>
+		<action name="opxzdelete" class="work.control.action.OPXZdelete">
+			<result name="success">/page/control/beforeopxz.jsp</result>
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="100000000"/>
+	<package name="rulecase_default" extends="struts-default" >
+		
+		<action name="searchselect" class="work.rulecase.action.RcRuleSearchSelect">
+			<result name="success">/page/rulecase/rulesearchajax.jsp</result>
+		</action>
+		<action name="rulesearch" class="work.rulecase.action.RcRuleSearch">
+			<result name="success">/page/rulecase/rulesearch.jsp</result>
+		</action>
+		<!-- rule -->
+		<action name="rcrulety" class="work.rulecase.action.RuleTYAction">
+			<result name="success">/page/rulecase/rulety.jsp</result>
+		</action>
+		<action name="rcrulewh" class="work.rulecase.action.RuleWhAction">
+			<result name="success">/page/rulecase/rulewh.jsp</result>
+		</action>
+		<action name="rcrulejy" class="work.rulecase.action.RuleJyAction">
+			<result name="success">/page/rulecase/rulejy.jsp</result>
+		</action>
+		<action name="rcrulezl" class="work.rulecase.action.RuleZlAction">
+			<result name="success">/page/rulecase/rulezl.jsp</result>
+		</action>
+		<action name="rcrulegx" class="work.rulecase.action.RuleGxAction">
+			<result name="success">/page/rulecase/rulegx.jsp</result>
+		</action>
+		<action name="rulejumptodetail" class="work.rulecase.action.RuleJumptoDetail">
+			<result name="success">/page/rulecase/rulejumptodetail.jsp</result>
+		</action>
+		<action name="viewruledetail" class="work.rulecase.action.ViewRuleDetail">
+			<result name="success">/page/rulecase/ruledetail.jsp</result>
+			<result name="toupdate">/page/rulecase/ruletoupdate.jsp</result>
+		</action>
+		<!-- case -->
+		<action name="rccasety" class="work.rulecase.action.CaseTYAction">
+			<result name="success">/page/rulecase/casety.jsp</result>
+		</action>
+		<action name="rccasewh" class="work.rulecase.action.CaseWhAction">
+			<result name="success">/page/rulecase/casewh.jsp</result>
+		</action>
+		<action name="rccasegx" class="work.rulecase.action.CaseGxAction">
+			<result name="success">/page/rulecase/casegx.jsp</result>
+		</action>
+		<action name="casejumptodetail" class="work.rulecase.action.CaseJumptoDetail">
+			<result name="success">/page/rulecase/casejumptodetail.jsp</result>
+		</action>
+		<action name="viewcasedetail" class="work.rulecase.action.ViewCaseDetail">
+			<result name="success">/page/rulecase/casedetail.jsp</result>
+			<result name="toupdate">/page/rulecase/casetoupdate.jsp</result>
+		</action>
+		<!-- rule hegui -->
+		<action name="rulehg" class="work.rulecase.action.hegui.HeGuiAction">
+			<result name="success1">/page/rulecase/hegui/ruleshbz.jsp</result>
+			<result name="success2">/page/rulecase/hegui/rulefhcy.jsp</result>
+			<result name="success3">/page/rulecase/hegui/ruleyjbf.jsp</result>
+		</action>
+		<action name="ruleshbzadd" class="work.rulecase.action.hegui.RuleShbzAdd">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<action name="rulefhcyadd" class="work.rulecase.action.hegui.RuleFhcyAdd">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<action name="ruleyjbfadd" class="work.rulecase.action.hegui.RuleYjbfAdd">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<action name="rulehgtoupdate" class="work.rulecase.action.hegui.RuleHgToUpdate">
+			<result name="success1">/page/rulecase/hegui/ruleshbzupdate.jsp</result>
+			<result name="success2">/page/rulecase/hegui/rulefhcyupdate.jsp</result>
+			<result name="success3">/page/rulecase/hegui/ruleyjbfupdate.jsp</result>
+		</action>
+		<action name="rulehgdetail" class="work.rulecase.action.hegui.RuleHgDetail">
+			<result name="success1">/page/rulecase/hegui/ruleshbzdetail.jsp</result>
+			<result name="success2">/page/rulecase/hegui/rulefhcydetail.jsp</result>
+			<result name="success3">/page/rulecase/hegui/ruleyjbfdetail.jsp</result>
+		</action>
+		<action name="rulehgupdate" class="work.rulecase.action.hegui.RuleHgUpdate">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<action name="rulehgimport" class="work.rulecase.action.hegui.RuleHgImport">
+			<result name="success">/page/public/success.jsp</result>
+		</action>
+		<!-- rulemg -->
+		<action name="ruleselect" class="work.rulecase.action.RuleSelect">
+			<result name="success">/page/rulecase/ruleajax.jsp</result>
+		</action>
+		<action name="ruleupdate" class="work.rulecase.action.RuleUpdate">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<action name="delrule" class="work.rulecase.action.RuleDelRule">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<action name="ruleimport" class="work.rulecase.action.RuleImport">
+			<result name="success">/page/public/success.jsp</result>
+		</action>
+		<action name="imgimport" class="work.rulecase.action.ImgImport">
+			<result name="success">/page/public/success.jsp</result>
+		</action>
+		<action name="zlimport" class="work.rulecase.action.ZlImport">
+			<result name="success">/page/public/success.jsp</result>
+		</action>
+		<action name="ruletoadd" class="work.rulecase.action.RuleToAdd">
+			<result name="success">/page/rulecase/ruleadd.jsp</result>
+		</action>
+		<action name="ruleadd" class="work.rulecase.action.RuleAdd">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<!-- casemg -->
+		<action name="caseselect" class="work.rulecase.action.CaseSelect">
+			<result name="success">/page/rulecase/caseajax.jsp</result>
+		</action>
+		<action name="caseupdate" class="work.rulecase.action.CaseUpdate">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<action name="delcase" class="work.rulecase.action.CaseDelCase">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<action name="casetoadd" class="work.rulecase.action.CaseToAdd">
+			<result name="success">/page/rulecase/caseadd.jsp</result>
+		</action>
+		<action name="caseadd" class="work.rulecase.action.CaseAdd">
+			<result name="success">/page/public/successclose.jsp</result>
+		</action>
+		<!-- other -->
+		<action name="derivezl" class="work.rulecase.action.DeriveZl">
+			<result name="success">/page/rulecase/derivedetaildoc.jsp</result>
+		</action>
+			<action name="delrulezl" class="work.rulecase.action.DelRuleZl">
+			<result name="success">/page/rulecase/rulezlsuccess.jsp</result>
+		</action>
+		<action name="expressrule" class="work.rulecase.action.ExpressRule">
+			<result name="success">/page/public/derivedetail.jsp</result>
+		</action>
+		<action name="expresscase" class="work.rulecase.action.ExpressCase">
+			<result name="success">/page/public/derivedetail.jsp</result>
+		</action>
+		
+	</package>
+</struts>    

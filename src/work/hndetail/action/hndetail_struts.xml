@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="hndetail_default" extends="struts-default" >
+		<action name="hndetail" class="work.hndetail.action.HnDetailAction">
+			<result name="find_all_success">/index.jsp</result>
+		</action>
+		<action name="express" class="work.hndetail.action.ExpressReport">
+			<result name="success">/page/report/expressreport.jsp</result>
+			<result name="error">/page/public/error.jsp</result>
+		</action>
+		<action name="dailyreport" class="work.hndetail.action.HnExportAction">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+			<result name="error">/page/public/error.jsp</result>
+		</action>
+		<action name="newdailyreport" class="work.hndetail.action.HnExportNew">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+			<result name="error">/page/public/error.jsp</result>
+		</action>
+		<action name="newdailydetail" class="work.hndetail.action.HnExportNewDetail">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+			<result name="error">/page/public/error.jsp</result>
+		</action>
+		<action name="hnnew" class="work.hndetail.action.HnNew1Action">
+			<result name="success">/page/report/hnnew1.jsp</result>
+		</action>
+		<action name="hnnewdetail" class="work.hndetail.action.HnNewDetailAction">
+			<result name="success">/page/report/hnnewdetail.jsp</result>
+		</action>
+		<action name="showhnnewajax" class="work.hndetail.action.ShowHnNewAjax">
+			<result name="success">/page/report/showhnnewajax.jsp</result>
+		</action>
+	</package>
+</struts>    

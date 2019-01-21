@@ -1,0 +1,185 @@
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+
+    <description>util</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>util</short-name>
+    <uri>http://template.fb.com/article/taglib</uri>
+    <function>
+        <description>根据position获得组别</description>
+        <name>positiontoteam</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String positionToTeam( java.lang.String)</function-signature>
+    </function>
+     <function>
+        <description>根据position获得组别</description>
+        <name>postoteamshort</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String posToTeamShort( java.lang.String)</function-signature>
+    </function>
+	<function>
+        <description>doubleto2</description>
+        <name>doubleto2</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String DoubleTo2( java.lang.Double)</function-signature>
+    </function>
+    <function>
+        <description>doubleto4</description>
+        <name>doubleto4</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String DoubleTo4( java.lang.Double)</function-signature>
+    </function>
+    
+      <function>
+        <description>doubleto0</description>
+        <name>doubleto0</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String DoubleTo0( java.lang.Double)</function-signature>
+    </function>
+          <function>
+        <description>Integer转化为String</description>
+        <name>integertostring</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String IntegerToString( java.lang.Integer)</function-signature>
+    </function>
+    <function>
+        <description>double转化为百分制</description>
+        <name>doubletopercent</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String DoubleToPercent(java.lang.Double)</function-signature>
+    </function>
+    <function>
+        <description>double留整数</description>
+        <name>doubleto0integer</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String DoubleTo0Integer( java.lang.Double)</function-signature>
+    </function>
+     <function>
+        <description>double空转化为“-”</description>
+        <name>ifdoublenull</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String ifNull( java.lang.Double)</function-signature>
+    </function>
+     <function>
+        <description>Integer空转化为“-”</description>
+        <name>ifintegernull</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String ifNull( java.lang.Integer)</function-signature>
+    </function>
+     <function>
+        <description>中心数字转化为描述</description>
+        <name>zxToString</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String zxToString( java.lang.Integer)</function-signature>
+    </function>
+     <function>
+        <description>数字转化为描述</description>
+        <name>xzToString</name>
+		<function-class>work.no.action.NoUtil</function-class>
+		<function-signature>java.lang.String xzToString(java.lang.String,java.lang.Integer)</function-signature>
+    </function>
+     <function>
+        <description>数字转化为描述</description>
+        <name>xzToShortString</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String xzToShortString(java.lang.String)</function-signature>
+    </function>
+     <function>
+        <description>数字转化为描述</description>
+        <name>teamToString</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String teamToShortString( java.lang.Integer)</function-signature>
+    </function>
+    <function>
+        <description>处室转化为描述</description>
+        <name>cToString</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String cToName( java.lang.String)</function-signature>
+    </function>
+    <function>
+        <description>double转化率或者“-”</description>
+        <name>doubletolv</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  DoubleToPercentNew( java.lang.Integer,java.lang.Double)</function-signature>
+    </function>
+    <function>
+        <description>double根据第一个参数转化第二个参数为率或者“-”</description>
+        <name>doubledoubletolv</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  DoubleDoubleToPercentNew( java.lang.Double,java.lang.Double)</function-signature>
+    </function>
+   <function>
+        <description>double根据第一个参数转化第二个参数为率或者“-”</description>
+        <name>integeraccordtointeger</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  IntegerAccordToInteger( java.lang.Integer,java.lang.Integer)</function-signature>
+    </function>
+       <function>
+        <description>double根据第一个参数转化第二个参数为百分比或者整数</description>
+        <name>doubleaccordto</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  DoubleAccordTo( java.lang.Double,java.lang.String)</function-signature>
+    </function>
+     <function>
+        <description>公司代码转换成中文</description>
+        <name>companytostring</name>
+		<function-class>work.no.action.NoUtil</function-class>
+		<function-signature>java.lang.String  IntegerToCompany(java.lang.Integer)</function-signature>
+    </function>
+     <function>
+        <description>公司代码转换成中文</description>
+        <name>sourcetostring</name>
+		<function-class>work.no.action.NoUtil</function-class>
+		<function-signature>java.lang.String  IntegerToSource(java.lang.Integer)</function-signature>
+    </function>
+     <function>
+        <description>工号字号大小</description>
+        <name>nofontsize</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  NoFontSize(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <description>板块转中文</description>
+        <name>platetoname</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  PlateToName(java.lang.Integer)</function-signature>
+    </function>
+    <function>
+        <description>规则资料转中文</description>
+        <name>rulezltostring</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  RuleZlToString(java.lang.Integer)</function-signature>
+    </function>
+    <function>
+        <description>业务类型转中文</description>
+        <name>ywtypetostring</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  scTypeToString(java.lang.Integer)</function-signature>
+    </function>
+     <function>
+        <description>长转短</description>
+        <name>stringtoshort</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  StringToShort(java.lang.String)</function-signature>
+    </function>
+     <function>
+        <description>1,0转是否</description>
+        <name>yesorno</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  YesOrNo(java.lang.Integer)</function-signature>
+    </function>
+    <function>
+        <description>opxz操作员属性转换</description>
+        <name>opxztos</name>
+		<function-class>work.util.Tld</function-class>
+		<function-signature>java.lang.String  OPXZtoString(java.lang.Integer)</function-signature>
+    </function>
+     <function>
+        <description>opxz操作员属性转换成描述</description>
+        <name>shuxingtomiaosu</name>
+		<function-class>work.no.action.NoUtil</function-class>
+		<function-signature>java.lang.String  shuxingToMiaosu(java.lang.String,java.lang.String)</function-signature>
+    </function>
+</taglib>

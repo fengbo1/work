@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="no_default" extends="struts-default" >
+		
+		<action name="no" class="work.no.action.NoAction">
+			<result name="find_all_success">/page/no/nolist.jsp</result>
+			<result name="to_update_success">/page/no/notoupdate.jsp</result>
+		</action>
+		<action name="nolog" class="work.no.action.NoLogAction">
+			<result name="find_all_desc_success">/page/no/nolog.jsp</result>
+		</action>
+		<action name="noadd" class="work.no.action.NoAdd">
+			<result name="success">/page/no/nosuccess.jsp</result>
+		</action>
+		<action name="nodelete" class="work.no.action.NoDelete">
+			<result name="success">/page/no/nosuccess.jsp</result>
+		</action>
+		<action name="importno" class="work.no.action.ImportNo">
+			<result name="success">/page/no/nosuccess.jsp</result>
+			<result name="failed">/page/public/success.jsp</result>
+		</action>
+		<action name="nolist" class="work.no.action.NoFindAll">
+			<result name="success">/page/no/nolist.jsp</result>
+		</action>
+		<action name="noexpress" class="work.no.action.NoExpress">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<action name="noupdate" class="work.no.action.NoToUpdate">
+			<result name="success">/page/no/noupdatesuccess.jsp</result>
+		</action>
+		<action name="nobeforeupdate" class="work.no.action.NoBeforeUpdate">
+			<result name="success">/page/no/notoupdate.jsp</result>
+		</action>
+		<action name="nobeforeadd" class="work.no.action.NoBeforeAdd">
+			<result name="success">/page/no/noadd.jsp</result>
+		</action>
+	</package>
+</struts>    

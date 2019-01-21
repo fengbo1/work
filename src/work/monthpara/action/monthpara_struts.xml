@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="monthpara_default" extends="struts-default" >
+		
+		<action name="monthpara" class="work.monthpara.action.MonthParaAction">
+			<result name="find_all_success">/page/monthpara/monthparalist.jsp</result>
+			<result name="to_update_success">/page/monthpara/monthparaupdate.jsp</result>
+		</action>
+		<action name="paralog" class="work.monthpara.action.ParaLogAction">
+			<result name="find_all_desc_success">/page/monthpara/monthparalog.jsp</result>
+		</action>
+		<action name="monthparafindall" class="work.monthpara.action.MonthParaList">
+			<result name="success">/page/monthpara/monthparalist.jsp</result>
+		</action>
+		<action name="monthparaadd" class="work.monthpara.action.MonthParaAdd">
+			<result name="success">/page/monthpara/parasuccess.jsp</result>
+		</action>
+		<action name="monthparaupdate" class="work.monthpara.action.MonthParaUpdate">
+			<result name="success">/page/monthpara/parasuccess.jsp</result>
+		</action>
+	</package>
+</struts>    

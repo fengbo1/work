@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="introduction_default" extends="struts-default" >
+		
+		<action name="introduction" class="work.internal.action.Internal">
+			<result name="success">/page/introduction/introsuccess.jsp</result>
+		</action>
+		<action name="prepare1" class="work.internal.action.Prepare">
+			<result name="success">/page/introduction/introduction.jsp</result>
+		</action>
+	</package>
+</struts>    

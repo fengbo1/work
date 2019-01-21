@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="user_default" extends="struts-default" >
+		<action name="user" class="work.userinfo.action.UserAction">
+			<result name="find_all_success">/page/userinfo/list.jsp</result>
+			<result name="add_success">/page/public/success.jsp</result>
+			<result name="delete_success">/page/public/success.jsp</result>
+			<result name="to_update_success">/page/userinfo/modify.jsp</result>
+		</action>
+		<action name="login" class="work.userinfo.action.UserLogin">
+			<result name="success">/page/work.jsp</result>
+			<result name="false">/authorityfailed.jsp</result>
+		</action>
+		<action name="logout" class="work.userinfo.action.UserLogout">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="userModify" class="work.userinfo.action.UserModify">
+			<result name="success">/page/public/success.jsp</result>
+			<result name="false">/page/userinfo/modify.jsp</result>
+		</action>
+		
+	</package>
+</struts>    

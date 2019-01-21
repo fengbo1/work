@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="ygxy_default" extends="struts-default" >
+	   
+	<action name="y_upload" class="work.ygxy.action.UploadAction">
+		<result name="success">/page/ygxy/uploadsuccess.jsp</result>
+		<!--  <result name="success">/page/hn/derivedetail.jsp</result>-->
+	</action>
+	<action name="y_xyrb" class="work.ygxy.action.Grmxrb">
+		<result name="success">/page/ygxy/y_grmxrb.jsp</result>
+	</action>
+	<action name="ypbmx" class="work.ygxy.action.UploadPbmx">
+		<result name="success">/page/ygxy/uploadsuccess.jsp</result>
+	</action>
+	<action name="yzjmx" class="work.ygxy.action.UploadZjmx">
+		<result name="success">/page/ygxy/uploadsuccess.jsp</result>
+	</action>
+ 	<action name="lxscupload" class="work.ygxy.action.UploadLxsc">
+		<result name="success">/page/ygxy/uploadsuccess.jsp</result>
+	</action>
+	<action name="ygxymxbexpress" class="work.ygxy.action.MxbExpress">
+		<result name="success">/page/hn/derivedetail.jsp</result>
+	</action>
+	<action name="getyear" class="work.ygxy.action.GetYear">
+		<result name="success">/page/ygxy/process.jsp</result>
+	</action>
+	<action name="quarterprocess" class="work.ygxy.action.QuarterProcess">
+		<result name="success">/page/ygxy/processsuccess.jsp</result>
+	</action>
+	<action name="quarterexpress" class="work.ygxy.action.QuarterExpress">
+		<result name="success">/page/hn/derivedetail.jsp</result>
+	</action>
+</package>
+</struts>    

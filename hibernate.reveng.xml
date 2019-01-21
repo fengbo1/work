@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="user_info" catalog="work" class="UserInfo">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wb_init" catalog="work" class="WbInit">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="pool" catalog="work" class="Pool">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="hn891" catalog="work" class="Hn891">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="hn895" catalog="work" class="Hn895">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_control" catalog="work" class="Control">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+
+	<table name="t_no" catalog="work" class="No">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_detail" catalog="work" class="HnDetail">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_no" catalog="work" class="No">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wb_base" catalog="work" class="WbBase">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_conp_code" catalog="work" class="CorpCode">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_corp_code" catalog="work" class="CorpCode">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wb_yslr" catalog="work" class="WbYslr">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_daily_status" catalog="work" class="DailyStatus">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wb_base_save" catalog="work" class="WbBaseSave">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wb_lrzc" catalog="work" class="WbLrzc">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wb_fzyy" catalog="work" class="WbFzyy">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wb_base_zc" catalog="work" class="WbBaseZc">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_daily_summary" catalog="work" class="SummaryDaily">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_team" catalog="work" class="Team">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_month_para" catalog="work" class="MonthPara">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_user_info" catalog="test" class="FUserInfo"></table>
+	<table name="t_hn_online" catalog="work" class="Online">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_report_progress" catalog="work"
+		class="ReportProgress">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_log" catalog="work" class="WorkLog">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wh_hz" catalog="work" class="Whhz">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wh_ywl" catalog="work" class="Whywl">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_wh_zlxl" catalog="work" class="Whzlxl">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_no_log" catalog="work" class="NoLog">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_para_log" catalog="work" class="ParaLog">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="percl" catalog="work" class="Percl">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_summary" catalog="work" class="Summary">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_jhsx" catalog="work" class="Jhsx">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="y_day" catalog="work" class="Ygxy">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="y_zjmx" catalog="work" class="YZjmx">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="y_pbmx" catalog="work" class="YPbmx">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="y_lxsc" catalog="work" class="Lxsc">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="y_day_quarter" catalog="work" class="YgxyQuarter">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_mycalendar" catalog="work" class="MyCalendar">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_waihui" catalog="work" class="HnWaihui">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_rc_rule" catalog="work" class="RcRule">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_rc_zl" catalog="work" class="RcZl">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_rc_case" catalog="work" class="RcCase">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_config" catalog="work" class="HnConfig">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_new" catalog="work" class="HnNew">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_detail_ls" catalog="work" class="HndetailLs">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_detail_temp" catalog="work" class="HdTemp">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_waihui_ls" catalog="work" class="HnWaihuiLs">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_jihe" catalog="work" class="HnJihe">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_ycsh" catalog="work" class="HnYcsh">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_jianya" catalog="work" class="HnJianya">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_jihe_config" catalog="work" class="JiheConfig">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_cfg_xz" catalog="work" class="CfgXz">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_fxq_config" catalog="work" class="FxqConfig">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_fxq" catalog="work" class="HnFxq">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_whzl" catalog="work" class="HnWhzl">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="t_hn_whxl" catalog="work" class="HnWhxl">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+<table name="t_user_cfg" catalog="work" class="UserCfg">
+	<primary-key>
+		<generator class="native"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="hn_default" extends="struts-default" >
+		<action name="hn891" class="work.hn.action.Hn891Action">
+			<result name="find_all_success">/page/hn/hn891.jsp</result>
+		</action>
+		<action name="hn895" class="work.hn.action.Hn895Action">
+			<result name="find_all_success">/page/hn/hn895.jsp</result>
+		</action>
+		<action name="express891" class="work.hn.action.ExpressBase891">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<action name="express895" class="work.hn.action.ExpressBase895">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<action name="hn891search" class="work.hn.action.Hn891Search">
+			<result name="success">/page/report/basedata891.jsp</result>
+		</action>
+		<action name="hn895search" class="work.hn.action.Hn895Search">
+			<result name="success">/page/report/basedata895.jsp</result>
+		</action>
+		<action name="producesummary" class="work.hn.action.ProduceSummary">
+			<result name="success">/page/public/success.jsp</result>
+		</action>
+		<action name="summarydaily" class="work.hn.action.SummaryDailyReport">
+			<result name="success">/page/report/summarydaily.jsp</result>
+		</action>
+		<action name="expressSummary" class="work.hn.action.ExpressSummary">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<action name="expressSimple" class="work.hn.action.ExpressSimple">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<action name="summarysimple" class="work.hn.action.SummarySimpleReport">
+			<result name="success">/page/warning/warning.jsp</result>
+		</action>
+		<action name="producesimple" class="work.hn.action.SummarySimple">
+			<result name="success">/page/public/success.jsp</result>
+		</action>
+		<action name="expwaihui" class="work.hn.action.ExpWaihui">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<action name="expjianya" class="work.hn.action.ExpJianya">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<action name="expjihe" class="work.hn.action.ExpJihe">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<action name="expycsh" class="work.hn.action.ExpYcsh">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<action name="expfxq" class="work.hn.action.ExpFxq">
+			<result name="success">/page/hn/derivedetail.jsp</result>
+		</action>
+		<!-- 仅供测试用 -->
+		<action name="summaryimport" class="work.hn.action.SummaryImport">
+			<result name="success">/page/public/success.jsp</result>
+		</action>
+	</package>
+</struts>    
