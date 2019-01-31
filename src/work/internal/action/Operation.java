@@ -9,6 +9,7 @@ import work.hndetail.dao.HdTempDAO;
 import ccb.hibernate.HibernateSessionFactory;
 import work.hndetail.dao.HndetailLsDAO;
 import work.control.dao.HnConfigDAO;
+import work.control.pojo.HnConfig;
 import work.control.pojo.Xishu;
 import work.daily.dao.DailyStatusDAO;
 import work.hn.dao.Hn891DAO;
@@ -303,7 +304,7 @@ public class Operation {
 				}
 				System.out.println("no:"+tempno);
 				ArrayList<Pool> listpool = (ArrayList<Pool>) pooldao.findAllByNoAndIntype(listno.get(i),2);
-				Hn895 hn895 = new Hn895("","","",0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,
+				Hn895 hn895 = new Hn895("","","",0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0,
 						0,0.0,0.0,0,0.0,0.0,0,0.0,0.0,0,0.0,0,0);
 				for(int j=0;j<listpool.size();j++)
 				{
@@ -375,7 +376,8 @@ public class Operation {
 					}
 					else if(part.equals(Tld.RMB_FZW[10]))
 					{
-						hn895.setShsb(hn895.getShsb()+poolJ.getNumber());
+						hn895.setSbyy(hn895.getSbyy()+poolJ.getNumber());//商户失败处理记在失败原因分析里面
+				//		hn895.setShsb(hn895.getShsb()+poolJ.getNumber());
 						rwl+=poolJ.getNumber();
 						tpl+=poolJ.getTp();
 					}
@@ -394,6 +396,18 @@ public class Operation {
 					else if(part.equals(Tld.RMB_FZW[13]))
 					{
 						hn895.setRlsb(hn895.getRlsb()+poolJ.getNumber());
+						rwl+=poolJ.getNumber();
+						tpl+=poolJ.getTp();
+					}
+					else if(part.equals(Tld.RMB_FZW[14]))
+					{
+						hn895.setKdfh(hn895.getKdfh()+poolJ.getNumber());
+						rwl+=poolJ.getNumber();
+						tpl+=poolJ.getTp();
+					}
+					else if(part.equals(Tld.RMB_FZW[15]))
+					{
+						hn895.setFyhd(hn895.getFyhd()+poolJ.getNumber());
 						rwl+=poolJ.getNumber();
 						tpl+=poolJ.getTp();
 					}
@@ -423,7 +437,9 @@ public class Operation {
 					+check.mul(hn895.getShsb(),xs.getXs11())
 					+check.mul(hn895.getRlcs(),xs.getXs12())
 					+check.mul(hn895.getRlfs(),xs.getXs13())
-					+check.mul(hn895.getRlsb(),xs.getXs14());
+					+check.mul(hn895.getRlsb(),xs.getXs14())
+					+check.mul(hn895.getKdfh(),xs.getXs15())
+					+check.mul(hn895.getFyhd(),xs.getXs16());
 					hn895.setZhcl(check.DoubleTo2(temp));
 					hn895.setLrtp(tpl);
 					hn895.setYwl(rwl);
@@ -444,9 +460,9 @@ public class Operation {
 			}
 			sql = "insert into hn895_ls(time,no,name,bmsb,xl_bmsb,yxcf,xl_yxcf,lrxg,xl_lrxg,lrsq,xl_lrsq,jhxg,xl_jhxg," +
 					"jhsq,xl_jhsq,sbyy,xl_sbyy,cslr,xl_cslr,zyfs,xl_zyfs,shsh,xl_shsh,shsb,xl_shsb,rlcs,xl_rlcs,rlfs,xl_rlfs," +
-					"rlsb,xl_rlsb,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl,ccl,cx,cxl,zhcl,ywl,sumxl,zx,xz) select time,no,name,bmsb," +
+					"rlsb,xl_rlsb,kdfh,xl_kdfh,fyhd,xl_fyhd,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl,ccl,cx,cxl,zhcl,ywl,sumxl,zx,xz) select time,no,name,bmsb," +
 					"xl_bmsb,yxcf,xl_yxcf,lrxg,xl_lrxg,lrsq,xl_lrsq,jhxg,xl_jhxg,jhsq,xl_jhsq,sbyy,xl_sbyy,cslr,xl_cslr,zyfs," +
-					"xl_zyfs,shsh,xl_shsh,shsb,xl_shsb,rlcs,xl_rlcs,rlfs,xl_rlfs,rlsb,xl_rlsb,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl," +
+					"xl_zyfs,shsh,xl_shsh,shsb,xl_shsb,rlcs,xl_rlcs,rlfs,xl_rlfs,rlsb,xl_rlsb,kdfh,xl_kdfh,fyhd,xl_fyhd,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl," +
 					"ccl,cx,cxl,zhcl,ywl,sumxl,zx,xz from hn895 where time='"+date+"'";
 			session.createSQLQuery(sql).executeUpdate();
 			sql = "update hn895_ls set lrccl=CAST(lrcc/lrxg AS DECIMAL(18,4)) where time='"+date+"' and lrcc>0";
@@ -500,6 +516,8 @@ public class Operation {
 			String sql = "select distinct no from Pool where intype=3";//查找Pool中waihui唯一的no list
 			query = session.createQuery(sql);
 			Xishu xs = hcdao.getConfigByType(3);
+			HnConfig dgcs = hcdao.findAllByCodeAndPart("601001","外汇业务初审");
+			HnConfig dgfs = hcdao.findAllByCodeAndPart("601001","外汇业务复审");
 			listno=(ArrayList<String>) query.list();
 			for(int i=0;i<listno.size();i++)
 			{
@@ -519,27 +537,45 @@ public class Operation {
 				}
 				System.out.println("no:"+tempno);
 				ArrayList<Pool> listpool = (ArrayList<Pool>) pooldao.findAllByNoAndIntype(listno.get(i),3);
-				HnWaihui wh = new HnWaihui("-","-","-",0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0);
+				HnWaihui wh = new HnWaihui("-","-","-",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0);
+				double tmpsum = 0.0;
+				String weigh = "0.0";
 				for(int j=0;j<listpool.size();j++)
 				{
 					Pool poolJ = listpool.get(j);
 					String code = poolJ.getCode();
 					String part = poolJ.getPart();
+					//按环节和业务编码计算折合产量
+					weigh = hcdao.findWeightByCodeAndPart(code, part);
+					tmpsum+=check.mul(poolJ.getNumber(),weigh);
 					//1:"外汇业务初审",2"外汇业务复审",3"录入修改",4"录入修改授权",5"检核修改",6"检核修改授权",7"记账失败人工异常处理",8"外汇票据初审"
 					if(part.equals(Tld.WAIHUI[0]))
 					{
-						wh.setZycs(wh.getZycs()+poolJ.getNumber());
+						if(dgcs.getCode().contains(code))//如果是对公的外汇初审
+						{
+							wh.setDgcs(wh.getDgcs()+poolJ.getNumber());
+						}
+						else
+						{
+							wh.setZycs(wh.getZycs()+poolJ.getNumber());
+						}
 						rwl+=poolJ.getNumber();
 						tpl+=poolJ.getTp();
 					}
 					else if(part.equals(Tld.WAIHUI[1]))
 					{
-						wh.setZyfs(wh.getZyfs()+poolJ.getNumber());
+						if(dgfs.getCode().contains(code))//如果是对公的外汇复审
+						{
+							wh.setDgfs(wh.getDgfs()+poolJ.getNumber());
+						}
+						else
+						{
+							wh.setZyfs(wh.getZyfs()+poolJ.getNumber());
+						}
 						rwl+=poolJ.getNumber();
 						tpl+=poolJ.getTp();
 					}	
-					else 
-						if(part.equals(Tld.WAIHUI[2]))
+					else if(part.equals(Tld.WAIHUI[2]))
 					{
 						wh.setLrxg(wh.getLrxg()+poolJ.getNumber());
 						wh.setLrcc(wh.getLrcc()+poolJ.getCc());
@@ -577,6 +613,25 @@ public class Operation {
 						rwl+=poolJ.getNumber();
 						tpl+=poolJ.getTp();
 					}
+					else if(part.equals(Tld.WAIHUI[8]))
+					{
+						wh.setPjfs(wh.getPjfs()+poolJ.getNumber());
+						rwl+=poolJ.getNumber();
+						tpl+=poolJ.getTp();
+					}
+					else if(part.equals(Tld.WAIHUI[9]))
+					{
+						wh.setHrcs(wh.getHrcs()+poolJ.getNumber());
+						rwl+=poolJ.getNumber();
+						tpl+=poolJ.getTp();
+					}
+					else if(part.equals(Tld.WAIHUI[10]))
+					{
+						wh.setHrfs(wh.getHrfs()+poolJ.getNumber());
+						rwl+=poolJ.getNumber();
+						tpl+=poolJ.getTp();
+					}
+					
 				}
 				if(nodao.findByNo891(tempno).size()<1)
 				{
@@ -590,15 +645,18 @@ public class Operation {
 					wh.setName(no.getName());
 					wh.setZx(no.getZx());
 					wh.setXz(no.getXzwh());
-					Double temp = check.mul(wh.getZycs(),xs.getXs1())
-					+check.mul(wh.getZyfs(),xs.getXs2())
-					+check.mul(wh.getLrxg(),xs.getXs3())
-					+check.mul(wh.getLrsq(),xs.getXs4())
-					+check.mul(wh.getJhxg(),xs.getXs5())
-					+check.mul(wh.getJhsq(),xs.getXs6())
-					+check.mul(wh.getSbyy(),xs.getXs7())
-					+check.mul(wh.getPjcs(),xs.getXs8());
-					wh.setZhcl(check.DoubleTo2(temp));
+//					Double temp = check.mul(wh.getZycs(),xs.getXs1())
+//					+check.mul(wh.getZyfs(),xs.getXs2())
+//					+check.mul(wh.getLrxg(),xs.getXs3())
+//					+check.mul(wh.getLrsq(),xs.getXs4())
+//					+check.mul(wh.getJhxg(),xs.getXs5())
+//					+check.mul(wh.getJhsq(),xs.getXs6())
+//					+check.mul(wh.getSbyy(),xs.getXs7())
+//					+check.mul(wh.getPjcs(),xs.getXs8())
+//					+check.mul(wh.getPjfs(),xs.getXs9())
+//					+check.mul(wh.getHrcs(),xs.getXs10())
+//					+check.mul(wh.getHrfs(),xs.getXs11());
+					wh.setZhcl(check.DoubleTo2(tmpsum));
 					wh.setTp(tpl);
 					wh.setYwl(rwl);
 					wh.setSumxl(sumxl);
@@ -616,13 +674,24 @@ public class Operation {
 					whdao.merge(wh);
 				}
 			}
-			sql = "insert into t_hn_waihui_ls(date, no, name, zx, xz,zycs, zyfs, lrxg, lrsq, jhxg, jhsq, pjcs, pjfs, sbyy,xlzycs, xlzyfs, xllrxg, xllrsq, xljhxg, xljhsq, xlpjcs, xlpjfs, xlsbyy, lrcc, lclv, jhcc, jclv, tp, tplv, cx, cxlv, zhcl, ywl, sumxl,ccl,percl,bh,bhl) select date, no, name, zx, xz,zycs, zyfs, lrxg, lrsq, jhxg, jhsq, pjcs, pjfs, sbyy,xlzycs, xlzyfs, xllrxg, xllrsq, xljhxg, xljhsq, xlpjcs, xlpjfs, xlsbyy, lrcc, lclv, jhcc, jclv, tp, tplv, cx, cxlv, zhcl, ywl, sumxl,ccl,percl,bh,bhl from t_hn_waihui where date='"+date+"'";
+			sql = "insert into t_hn_waihui_ls(date, no, name, zx, xz,zycs, zyfs, lrxg, lrsq, jhxg, jhsq," +
+					" pjcs, pjfs, sbyy,dgcs,dgfs,hrcs,hrfs,xlzycs, xlzyfs, xllrxg, xllrsq, xljhxg, xljhsq, xlpjcs," +
+					" xlpjfs, xlsbyy,xldgcs,xldgfs,xlhrcs,xlhrfs, lrcc, lclv, jhcc, jclv, tp, tplv, cx, cxlv, zhcl, ywl," +
+					" sumxl,ccl,percl,bh,bhl) select date, no, name, zx, xz,zycs, zyfs, lrxg, lrsq, jhxg," +
+					" jhsq, pjcs, pjfs, sbyy,dgcs,dgfs,hrcs,hrfs,xlzycs, xlzyfs, xllrxg, xllrsq, xljhxg, xljhsq, xlpjcs," +
+					" xlpjfs, xlsbyy,xldgcs,xldgfs,xlhrcs,xlhrfs, lrcc, lclv, jhcc, jclv, tp, tplv, cx, cxlv, zhcl, ywl," +
+					" sumxl,ccl,percl,bh,bhl from t_hn_waihui where date='"+date+"'";
 			session.createSQLQuery(sql).executeUpdate();
 			sql = "update t_hn_waihui_ls set lclv=CAST(lrcc/lrxg AS DECIMAL(18,4)),jclv=CAST(jhcc/jhxg AS DECIMAL(18,4)),tplv=CAST(tp/ywl AS DECIMAL(18,4)),ccl=CAST((lrcc*"+xs.getXs3()+"+jhcc*"+xs.getXs5()+")/(lrxg*"+xs.getXs3()+"+jhxg*"+xs.getXs5()+") AS DECIMAL(18,4)),percl=CAST(sumxl/ywl AS DECIMAL(18,4)),bhl=CAST(bh/zyfs AS DECIMAL(18,4))";
 			session.createSQLQuery(sql).executeUpdate();
 			sql = "delete from t_hn_waihui where date='"+date+"'";
 			session.createSQLQuery(sql).executeUpdate();
-			sql = "insert into t_hn_waihui(date, no, name, zx, xz,zycs, zyfs, lrxg, lrsq, jhxg, jhsq, pjcs, pjfs, sbyy,xlzycs, xlzyfs, xllrxg, xllrsq, xljhxg, xljhsq, xlpjcs, xlpjfs, xlsbyy, lrcc, lclv, jhcc, jclv, tp, tplv, cx, cxlv, zhcl, ywl, sumxl,ccl,percl,bh,bhl ) select date, no, name, zx, xz,zycs, zyfs, lrxg, lrsq, jhxg, jhsq, pjcs, pjfs, sbyy,xlzycs, xlzyfs, xllrxg, xllrsq, xljhxg, xljhsq, xlpjcs, xlpjfs, xlsbyy, lrcc, lclv, jhcc, jclv, tp, tplv, cx, cxlv, zhcl, ywl, sumxl,ccl,percl,bh,bhl from t_hn_waihui_ls where date='"+date+"'";
+			sql = "insert into t_hn_waihui(date, no, name, zx, xz,zycs, zyfs, lrxg, lrsq, jhxg, jhsq, pjcs, pjfs," +
+					" sbyy,dgcs,dgfs,hrcs,hrfs,xlzycs, xlzyfs, xllrxg, xllrsq, xljhxg, xljhsq, xlpjcs, xlpjfs, xlsbyy,xldgcs,xldgfs,xlhrcs," +
+					"xlhrfs, lrcc, lclv, jhcc, jclv, tp, tplv, cx, cxlv, zhcl, ywl, sumxl,ccl,percl,bh,bhl ) select" +
+					" date, no, name, zx, xz,zycs, zyfs, lrxg, lrsq, jhxg, jhsq, pjcs, pjfs, sbyy,dgcs,dgfs,hrcs,hrfs,xlzycs," +
+					" xlzyfs, xllrxg, xllrsq, xljhxg, xljhsq, xlpjcs, xlpjfs, xlsbyy,xldgcs,xldgfs,xlhrcs,xlhrfs, lrcc, lclv, jhcc," +
+					" jclv, tp, tplv, cx, cxlv, zhcl, ywl, sumxl,ccl,percl,bh,bhl from t_hn_waihui_ls where date='"+date+"'";
 			session.createSQLQuery(sql).executeUpdate();
 			if(failed.length()>1){return failed;};
 		} catch (Exception e) {
@@ -687,7 +756,7 @@ public class Operation {
 				}
 				System.out.println("no:"+tempno);
 				ArrayList<Pool> listpool = (ArrayList<Pool>) pooldao.findAllByNoAndIntype(listno.get(i),6);
-				HnJianya jy = new HnJianya("-","-","-",0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0.0,0,0.0,0.0,0.0);
+				HnJianya jy = new HnJianya("-","-","-",0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0.0,0,0.0,0,0.0,0.0,0,0.0,0.0,0.0);
 				for(int j=0;j<listpool.size();j++)
 				{
 					Pool poolJ = listpool.get(j);
@@ -738,6 +807,18 @@ public class Operation {
 						rwl+=poolJ.getNumber();
 						tpl+=poolJ.getTp();
 					}
+					else if(part.equals(Tld.JIANYA[7]))
+					{
+						jy.setCslr(jy.getCslr()+poolJ.getNumber());
+						rwl+=poolJ.getNumber();
+						tpl+=poolJ.getTp();
+					}
+					else if(part.equals(Tld.JIANYA[8]))
+					{
+						jy.setZyfs(jy.getZyfs()+poolJ.getNumber());
+						rwl+=poolJ.getNumber();
+						tpl+=poolJ.getTp();
+					}
 				}
 				if(nodao.findByNo891(tempno).size()<1)
 				{
@@ -757,7 +838,9 @@ public class Operation {
 					+check.mul(jy.getJhsq(),xs.getXs4())
 					+check.mul(jy.getPjcs(),xs.getXs5())
 					+check.mul(jy.getPjfs(),xs.getXs6())
-					+check.mul(jy.getSbyy(),xs.getXs7());
+					+check.mul(jy.getSbyy(),xs.getXs7())
+					+check.mul(jy.getCslr(),xs.getXs8())
+					+check.mul(jy.getZyfs(),xs.getXs9());
 					jy.setZhcl(check.DoubleTo2(temp));
 					jy.setTp(tpl);
 					jy.setYwl(rwl);
@@ -1346,7 +1429,7 @@ public class Operation {
 				"CAST(sum(xljh_fz)/sum(xljh_fm) AS DECIMAL(18,2))," +
 				"CAST(sum(xlsh_fz)/sum(xlsh_fm) AS DECIMAL(18,2))," +
 				"CAST(sum(xljy_fz)/sum(xljy_fm) AS DECIMAL(18,2)),0.0,0.0,0.0,0.0,0.0,0.0," +
-				"'0','0','0' from t_hn_new where date='"+idate+"' and zx=0 and xz=0 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B')";
+				"'0','0','0' from t_hn_new where date='"+idate+"' and zx=0 and xz!=3 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B')";
 				session.createSQLQuery(sql).executeUpdate();
 				
 				sql = "insert into t_hn_team(time,chu,team,cl,clrmb,clwh,cljh," +
@@ -1372,7 +1455,7 @@ public class Operation {
 				"CAST(sum(xljh_fz)/sum(xljh_fm) AS DECIMAL(18,2))," +
 				"CAST(sum(xlsh_fz)/sum(xlsh_fm) AS DECIMAL(18,2))," +
 				"CAST(sum(xljy_fz)/sum(xljy_fm) AS DECIMAL(18,2)),0.0,0.0,0.0,0.0,0.0,0.0," +
-				"'0','0','0' from t_hn_new where date='"+idate+"' and zx=0 and xz=0 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B') group by mid(pos,5,1)";
+				"'0','0','0' from t_hn_new where date='"+idate+"' and zx=0 and xz!=3 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B') group by mid(pos,5,1)";
 				session.createSQLQuery(sql).executeUpdate();
 					
 				sql = "insert into t_hn_team_temp(time,chu,team,rjcl," +
@@ -1384,7 +1467,7 @@ public class Operation {
 				"CAST(sum(clsh)/sum(sxsh) AS DECIMAL(18,0))," +
 				"CAST(sum(cljy)/sum(sxjy) AS DECIMAL(18,0))," +
 				"CAST(sum(clfxq)/sum(sxfxq) AS DECIMAL(18,0))" +
-				" from t_hn_new where date>='"+bdate+"' and date<='"+idate+"' and zx=0 and xz=0 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B')";	
+				" from t_hn_new where date>='"+bdate+"' and date<='"+idate+"' and zx=0 and xz!=3 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B')";	
 				session.createSQLQuery(sql).executeUpdate();
 				
 				sql = "insert into t_hn_team_temp(time,chu,team,rjcl," +
@@ -1396,7 +1479,7 @@ public class Operation {
 				"CAST(sum(clsh)/sum(sxsh) AS DECIMAL(18,0))," +
 				"CAST(sum(cljy)/sum(sxjy) AS DECIMAL(18,0))," +
 				"CAST(sum(clfxq)/sum(sxfxq) AS DECIMAL(18,0))" +
-				" from t_hn_new where date>='"+bdate+"' and date<='"+idate+"' and zx=0 and xz=0 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B') group by mid(pos,5,1)";	
+				" from t_hn_new where date>='"+bdate+"' and date<='"+idate+"' and zx=0 and xz!=3 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B') group by mid(pos,5,1)";	
 				session.createSQLQuery(sql).executeUpdate();
 					
 			}

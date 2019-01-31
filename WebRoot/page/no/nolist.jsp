@@ -109,6 +109,7 @@ $(".btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","font-
 									<input type="hidden" name="para" value="${zx}"/>
 									<input type="hidden" name="para" value="${chu}"/>
 									<input type="hidden" name="" value="${strtemp}"/>
+									<input type="hidden" name="show" value="${show}"/>
 								<c:if test="${show=='mng'}">
 								<c:if test="${zhi=='0'||zhi=='1'||role=='6'||role=='7'||role=='9'}"> 
 								<input type="button" value="导出" onclick="expressout()"/>
@@ -186,10 +187,10 @@ $(".btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","font-
 							<tr class="表格表头背景">
 							<td colspan="8">
 								<div align="center">
-								<a	href="<%=path%>/nolist.action?zhuan=1&currentPage=${previousPage}&zx=${zx}&chu=${chu}&keyword=${strtemp}"
+								<a	href="<%=path%>/nolist.action?zhuan=1&currentPage=${previousPage}&zx=${zx}&chu=${chu}&keyword=${strtemp}&show=${show}"
 							style="padding-right: 30px;color: #104E8B">上一页</a> 
 									${currentPage} of ${totalPages}
-								<a	href="<%=path%>/nolist.action?zhuan=1&currentPage=${nextPage}&zx=${zx}&chu=${chu}&keyword=${strtemp}"
+								<a	href="<%=path%>/nolist.action?zhuan=1&currentPage=${nextPage}&zx=${zx}&chu=${chu}&keyword=${strtemp}&show=${show}"
 							style="padding-right: 30px;color: #104E8B">下一页</a> 	
 									共有 ${totalRows} 条记录
 									&nbsp;&nbsp;&nbsp;

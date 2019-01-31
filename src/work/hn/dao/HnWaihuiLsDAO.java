@@ -37,6 +37,8 @@ public class HnWaihuiLsDAO extends BaseHibernateDAO  {
 	public static final String PJCS = "pjcs";
 	public static final String PJFS = "pjfs";
 	public static final String SBYY = "sbyy";
+	public static final String DGCS = "dgcs";
+	public static final String DGFS = "dgfs";
 	public static final String HRCS = "hrcs";
 	public static final String HRFS = "hrfs";
 	public static final String XLZYCS = "xlzycs";
@@ -48,6 +50,8 @@ public class HnWaihuiLsDAO extends BaseHibernateDAO  {
 	public static final String XLPJCS = "xlpjcs";
 	public static final String XLPJFS = "xlpjfs";
 	public static final String XLSBYY = "xlsbyy";
+	public static final String XLDGCS = "xldgcs";
+	public static final String XLDGFS = "xldgfs";
 	public static final String XLHRCS = "xlhrcs";
 	public static final String XLHRFS = "xlhrfs";
 	public static final String LRCC = "lrcc";
@@ -218,6 +222,18 @@ public class HnWaihuiLsDAO extends BaseHibernateDAO  {
 		);
 	}
 	
+	public List findByDgcs(Object dgcs
+	) {
+		return findByProperty(DGCS, dgcs
+		);
+	}
+	
+	public List findByDgfs(Object dgfs
+	) {
+		return findByProperty(DGFS, dgfs
+		);
+	}
+	
 	public List findByHrcs(Object hrcs
 	) {
 		return findByProperty(HRCS, hrcs
@@ -281,6 +297,18 @@ public class HnWaihuiLsDAO extends BaseHibernateDAO  {
 	public List findByXlsbyy(Object xlsbyy
 	) {
 		return findByProperty(XLSBYY, xlsbyy
+		);
+	}
+	
+	public List findByXldgcs(Object xldgcs
+	) {
+		return findByProperty(XLDGCS, xldgcs
+		);
+	}
+	
+	public List findByXldgfs(Object xldgfs
+	) {
+		return findByProperty(XLDGFS, xldgfs
 		);
 	}
 	
@@ -433,7 +461,6 @@ public class HnWaihuiLsDAO extends BaseHibernateDAO  {
             throw re;
         }
     }
-    
     public List findAllByDate(String date) {
     	log.debug("finding all HnWaihuiLs instances");
     	try {

@@ -85,6 +85,15 @@
         <property name="pjsh895" type="java.lang.Double">
             <column name="pjsh895" precision="22" scale="0" />
         </property>
+        <property name="rlcs895" type="java.lang.Double">
+            <column name="rlcs895" precision="22" scale="0" />
+        </property>
+        <property name="rlfs895" type="java.lang.Double">
+            <column name="rlfs895" precision="22" scale="0" />
+        </property>
+        <property name="rlsb895" type="java.lang.Double">
+            <column name="rlsb895" precision="22" scale="0" />
+        </property>
         <property name="pctwh" type="java.lang.Double">
             <column name="pctwh" precision="22" scale="0" />
         </property>
@@ -115,6 +124,18 @@
         <property name="sbyywh" type="java.lang.Double">
             <column name="sbyywh" precision="22" scale="0" />
         </property>
+        <property name="dghccswh" type="java.lang.Double">
+            <column name="dghccswh" precision="22" scale="0" />
+        </property>
+        <property name="dghcfswh" type="java.lang.Double">
+            <column name="dghcfswh" precision="22" scale="0" />
+        </property>
+        <property name="dghrcswh" type="java.lang.Double">
+            <column name="dghrcswh" precision="22" scale="0" />
+        </property>
+        <property name="dghrfswh" type="java.lang.Double">
+            <column name="dghrfswh" precision="22" scale="0" />
+        </property>
         <property name="pctjy" type="java.lang.Double">
             <column name="pctjy" precision="22" scale="0" />
         </property>
@@ -129,6 +150,21 @@
         </property>
         <property name="lrsqjy" type="java.lang.Double">
             <column name="lrsqjy" precision="22" scale="0" />
+        </property>
+        <property name="jhxgjy" type="java.lang.Double">
+            <column name="jhxgjy" precision="22" scale="0" />
+        </property>
+        <property name="jhsqjy" type="java.lang.Double">
+            <column name="jhsqjy" precision="22" scale="0" />
+        </property>
+        <property name="sbyyjy" type="java.lang.Double">
+            <column name="sbyyjy" precision="22" scale="0" />
+        </property>
+        <property name="cslrjy" type="java.lang.Double">
+            <column name="cslrjy" precision="22" scale="0" />
+        </property>
+        <property name="zyfsjy" type="java.lang.Double">
+            <column name="zyfsjy" precision="22" scale="0" />
         </property>
     </class>
 </hibernate-mapping>

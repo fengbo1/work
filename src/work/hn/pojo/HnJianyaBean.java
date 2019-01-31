@@ -13,6 +13,8 @@ public class HnJianyaBean {
      private String pjcs;
      private String pjfs;
      private String sbyy;
+     private String cslr;
+     private String zyfs;
      private String xllrxg;
      private String xllrsq;
      private String xljhxg;
@@ -20,6 +22,8 @@ public class HnJianyaBean {
      private String xlpjcs;
      private String xlpjfs;
      private String xlsbyy;
+     private String xlcslr;
+     private String xlzyfs;
      private String lrcc;
      private String lclv;
      private String jhcc;
@@ -197,13 +201,37 @@ public class HnJianyaBean {
 	public void setZhcl(String zhcl) {
 		this.zhcl = zhcl;
 	}
+	public String getCslr() {
+		return cslr;
+	}
+	public void setCslr(String cslr) {
+		this.cslr = cslr;
+	}
+	public String getZyfs() {
+		return zyfs;
+	}
+	public void setZyfs(String zyfs) {
+		this.zyfs = zyfs;
+	}
+	public String getXlcslr() {
+		return xlcslr;
+	}
+	public void setXlcslr(String xlcslr) {
+		this.xlcslr = xlcslr;
+	}
+	public String getXlzyfs() {
+		return xlzyfs;
+	}
+	public void setXlzyfs(String xlzyfs) {
+		this.xlzyfs = xlzyfs;
+	}
 	public HnJianyaBean(Integer id, String date, String no, String name,
 			String zx, String lrxg, String lrsq, String jhxg, String jhsq,
-			String pjcs, String pjfs, String sbyy, String xllrxg,
-			String xllrsq, String xljhxg, String xljhsq, String xlpjcs,
-			String xlpjfs, String xlsbyy, String lrcc, String lclv,
-			String jhcc, String jclv, String tp, String tplv, String cx,
-			String cxlv, String zhcl) {
+			String pjcs, String pjfs, String sbyy, String cslr, String zyfs,
+			String xllrxg, String xllrsq, String xljhxg, String xljhsq,
+			String xlpjcs, String xlpjfs, String xlsbyy, String xlcslr,
+			String xlzyfs, String lrcc, String lclv, String jhcc, String jclv,
+			String tp, String tplv, String cx, String cxlv, String zhcl) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -217,6 +245,8 @@ public class HnJianyaBean {
 		this.pjcs = pjcs;
 		this.pjfs = pjfs;
 		this.sbyy = sbyy;
+		this.cslr = cslr;
+		this.zyfs = zyfs;
 		this.xllrxg = xllrxg;
 		this.xllrsq = xllrsq;
 		this.xljhxg = xljhxg;
@@ -224,6 +254,8 @@ public class HnJianyaBean {
 		this.xlpjcs = xlpjcs;
 		this.xlpjfs = xlpjfs;
 		this.xlsbyy = xlsbyy;
+		this.xlcslr = xlcslr;
+		this.xlzyfs = xlzyfs;
 		this.lrcc = lrcc;
 		this.lclv = lclv;
 		this.jhcc = jhcc;

@@ -103,6 +103,18 @@
         <property name="xlRlsb" type="java.lang.Double">
             <column name="xl_rlsb" precision="22" scale="0" />
         </property>
+        <property name="kdfh" type="java.lang.Integer">
+            <column name="kdfh" />
+        </property>
+        <property name="xlKdfh" type="java.lang.Double">
+            <column name="xl_kdfh" precision="22" scale="0" />
+        </property>
+        <property name="fyhd" type="java.lang.Integer">
+            <column name="fyhd" />
+        </property>
+        <property name="xlFyhd" type="java.lang.Double">
+            <column name="xl_fyhd" precision="22" scale="0" />
+        </property>
         <property name="lrcc" type="java.lang.Integer">
             <column name="lrcc" />
         </property>

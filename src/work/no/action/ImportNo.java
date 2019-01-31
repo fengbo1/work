@@ -152,16 +152,6 @@ public class ImportNo {
         		{
         			System.out.println("11");
         		}
-//        		if((team>0)&&(uidao.findAllByNo891(no.getNo891()).size()>0))
-//        		{
-//        			System.out.println("----"+team);
-//        			UserInfo ui = (UserInfo) uidao.findByNo891(no.getNo891()).get(0);
-//        			String tempp = "31"+String.valueOf(chu)+"0"+String.valueOf(team);
-//        			ui.setPosition(tempp);
-//        			no.setPosition(tempp);
-//            		//更新user_info 的组别
-//            		uidao.merge(ui);
-//        		}
         		if(!sheet.getCell(7, i).getContents().trim().isEmpty())
         		{
         			no.setPosition(sheet.getCell(7, i).getContents().trim());
@@ -177,7 +167,7 @@ public class ImportNo {
         		nodao.merge(no);
         	}
         	NoLog no = new NoLog("批量导入","批量导入",0,"批量导入","批量导入","批量导入",oname, ys.getDateTime(),"导入成功", "", "");
-        	nldao.save(no);
+        	nldao.merge(no);
         	trans.commit();
 		}catch (Exception e) {
 			trans.rollback();//出错回滚

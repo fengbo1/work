@@ -460,7 +460,13 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 						  </div></td>
 						<td colspan="2"><div align="center">
 								<p>人力资源失败原因分析</p>
-						  </div></td>        
+						  </div></td>
+						  <td colspan="2"><div align="center">
+								<p>小微快贷复核</p>
+						  </div></td>
+						<td colspan="2"><div align="center">
+								<p>房源总行核对</p>
+						  </div></td>          
 						</tr>
 						<tr  class="表格表头背景1" id="hang">
 							
@@ -591,7 +597,23 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 							<td  height="20" width="60" align="center" valign="middle" 
 								bordercolor=none><div align="center">
 									<p><font size=2>效率</font></p>
+							</div></td>
+							<td  height="20" width="60" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>量</font></p>
+								</div></td>
+							<td  height="20" width="60" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>效率</font></p>
 							</div></td>	
+							<td  height="20" width="60" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>量</font></p>
+								</div></td>
+							<td  height="20" width="60" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>效率</font></p>
+							</div></td>		
 					</tr>
 					<tr class="btbj" id="hang" style="height:20px">
 								<td height="25" align="center" valign="middle" nowrap><div
@@ -658,7 +680,14 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 										align="center">${hn895.rlsb}</div></td>			
 								<td height="25" align="center" valign="middle" nowrap><div
 										align="center">${fb:doubleto0(hn895.xlRlsb)}</div></td>
-										
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hn895.kdfh}</div></td>			
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${fb:doubleto0(hn895.xlKdfh)}</div></td>
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hn895.fyhd}</div></td>			
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${fb:doubleto0(hn895.xlFyhd)}</div></td>					
 						</tr>				
 		 </table>
 	</c:if>	 
@@ -672,11 +701,11 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 						<tr height="30px" class="表格表头背景1" id="hang">
 							<td colspan="2" align="center" valign="middle" 
 								bordercolor=none><div align="center">
-									<p>专业初审</p>
+									<p>对私专业初审</p>
 								</div></td>
 							<td colspan="2"  align="center" valign="middle" 
 								bordercolor=none><div align="center">
-									<p>专业复审</p>
+									<p>对私专业复审</p>
 								</div></td>
 							<td colspan="3"   align="center" valign="middle" 
 								bordercolor=none><div align="center">
@@ -705,7 +734,23 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 							<td  colspan="2"  align="center" valign="middle" 
 								bordercolor=none><div align="center">
 									<p>失败原因分析</p>
+								</div></td>
+							<td colspan="2" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p>对公汇出初审</p>
+								</div></td>
+							<td colspan="2"  align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p>对公汇出复审</p>
 								</div></td>	
+							<td  colspan="2"  align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p>对公汇入初审</p>
+								</div></td>
+							<td  colspan="2"  align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p>对公汇入复审</p>
+								</div></td>		
 							<td rowspan="2"  width="55px"  align="center" valign="middle" 
 								bordercolor=none><div align="center">
 									<p>退票率</p>
@@ -807,7 +852,39 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 							<td  width="40px" align="center" valign="middle" 
 								bordercolor=none><div align="center">
 									<p><font size=2>效率</font></p>
-								</div></td>					
+								</div></td>
+							<td width="40px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>业务量</font></p>
+								</div></td>
+							<td  width="40px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>效率</font></p>
+								</div></td>	
+							<td width="40px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>业务量</font></p>
+								</div></td>
+							<td  width="40px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>效率</font></p>
+								</div></td>
+							<td width="40px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>业务量</font></p>
+								</div></td>
+							<td  width="40px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>效率</font></p>
+								</div></td>
+							<td width="40px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>业务量</font></p>
+								</div></td>
+							<td  width="40px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>效率</font></p>
+								</div></td>										
 						</tr>
 							<tr class="btbj" id="hang" style="height:20px">
 								<td height="25" align="center" valign="middle" nowrap><div
@@ -850,6 +927,22 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 										align="center">${hw.sbyy}</div></td>
 								<td height="25" align="center" valign="middle" nowrap><div
 										align="center">${hw.xlsbyy}</div></td>
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hw.dgcs}</div></td>
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hw.xldgcs}</div></td>								
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hw.dgfs}</div></td>
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hw.xldgfs}</div></td>		
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hw.hrcs}</div></td>
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hw.xlhrcs}</div></td>								
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hw.hrfs}</div></td>
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${hw.xlhrfs}</div></td>		
 								<td height="25" align="center" valign="middle" nowrap><div
 										align="center">${fb:doubletolv(hw.ywl,hw.tplv)}</div></td>
 								<td height="25" align="center" valign="middle" nowrap><div
@@ -1013,7 +1106,15 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 							<td  colspan="2"  align="center" valign="middle" 
 								bordercolor=none><div align="center">
 									<p>失败原因分析</p>
-								</div></td>	
+								</div></td>
+							<td  colspan="2"  align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p>初审录入</p>
+								</div></td>
+							<td  colspan="2"  align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p>专业复审</p>
+								</div></td>		
 							<td rowspan="2"  width="40px"  align="center" valign="middle" 
 								bordercolor=none><div align="center">
 									<p>退票率</p>
@@ -1091,7 +1192,23 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 							<td  width="65px" align="center" valign="middle" 
 								bordercolor=none><div align="center">
 									<p><font size=2>效率</font></p>
-								</div></td>					
+								</div></td>
+							<td width="65px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>业务量</font></p>
+								</div></td>
+							<td  width="65px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>效率</font></p>
+								</div></td>
+							<td width="65px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>业务量</font></p>
+								</div></td>
+							<td  width="65px" align="center" valign="middle" 
+								bordercolor=none><div align="center">
+									<p><font size=2>效率</font></p>
+								</div></td>							
 						</tr>
 							<tr class="btbj" id="hang" style="height:20px">
 								<td height="25" align="center" valign="middle" nowrap><div
@@ -1127,11 +1244,20 @@ $("tr.btbj:even").css({"background-color":"#bfd3fc","font-family": "黑体","fon
 								<td height="25" align="center" valign="middle" nowrap><div
 										align="center">${fb:doubleto0(jy.xlsbyy)}</div></td>
 								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${jy.cslr}</div></td>
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${fb:doubleto0(jy.xlcslr)}</div></td>
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${jy.zyfs}</div></td>
+								<td height="25" align="center" valign="middle" nowrap><div
+										align="center">${fb:doubleto0(jy.xlzyfs)}</div></td>		
+								<td height="25" align="center" valign="middle" nowrap><div
 										align="center">${fb:doubletolv(jy.zhcl,jy.tplv)}</div></td>
 								<td height="25" align="center" valign="middle" nowrap><div
 										align="center">${fb:doubletolv(jy.zhcl,jy.cxlv)}</div></td>									
 								<td height="25" align="center" valign="middle" nowrap><div
 										align="center">${fb:doubleto0(jy.zhcl)}</div></td>
+										
 							</tr>		
 		</table>
 		<br/><br/>

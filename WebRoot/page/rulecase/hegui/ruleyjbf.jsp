@@ -92,11 +92,11 @@ highlight();
 	     }
 
 	     var reg1=new RegExp("∧","g"); 
-	     //var reg2=new RegExp(";","g");
+	     var reg2=new RegExp("。","g");
 	     $('span').each(function()//遍历文章；
 	             {
 	                var html = $(this).html();
-	                var newHtml1 = html.replace(reg1, '<br/>');//回车符
+	                var newHtml1 = html.replace(reg2, '。<br/>');//回车符
 	                $(this).html(newHtml1);//更新文章；
 	     });
 	 }
@@ -262,7 +262,7 @@ highlight();
 							</div>
 						</td>
 						<td height="25" width="150px" align="center" valign="middle">
-							<div align="center" style="word-break:break-all;">
+							<div align="left" style="word-break:break-all;">
 								<span>${rule.rule}</span>
 							</div>
 						</td>
@@ -300,8 +300,10 @@ highlight();
 						</td>
 						<td height="25" width="80px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
+								<c:if test="${role=='11'}">
 								<input type="button" value="修改" onclick="toupdate('${rule.id}');"><br/>
 								<input type="button" value="删除" onclick="delrule('${rule.id}');">
+								</c:if>
 							</div>
 						</td>
 					</tr>
@@ -327,8 +329,10 @@ highlight();
 								</div></td>
 							<td colspan="3">
 								<div align="center">
+								<c:if test="${role=='11'}">
 								<input type="button" value="新增" onclick="xinzeng();">
 								<input type="button" value="导入" onclick="importhg();">
+								</c:if>
 								</div>
 							</td>	
 						</tr>

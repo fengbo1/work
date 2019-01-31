@@ -25,6 +25,8 @@ public abstract class AbstractHnJianya  implements java.io.Serializable {
      private Integer pjcs;
      private Integer pjfs;
      private Integer sbyy;
+     private Integer cslr;
+     private Integer zyfs;
      private Double xllrxg;
      private Double xllrsq;
      private Double xljhxg;
@@ -32,6 +34,8 @@ public abstract class AbstractHnJianya  implements java.io.Serializable {
      private Double xlpjcs;
      private Double xlpjfs;
      private Double xlsbyy;
+     private Double xlcslr;
+     private Double xlzyfs;
      private Integer lrcc;
      private Double lclv;
      private Integer jhcc;
@@ -55,7 +59,7 @@ public abstract class AbstractHnJianya  implements java.io.Serializable {
 
     
     /** full constructor */
-    public AbstractHnJianya(String date, String no, String name, Integer zx, Integer xz, Integer lrxg, Integer lrsq, Integer jhxg, Integer jhsq, Integer pjcs, Integer pjfs, Integer sbyy, Double xllrxg, Double xllrsq, Double xljhxg, Double xljhsq, Double xlpjcs, Double xlpjfs, Double xlsbyy, Integer lrcc, Double lclv, Integer jhcc, Double jclv, Integer tp, Double tplv, Integer cx, Double cxlv, Double zhcl, Integer ywl, Double sumxl, Double ccl, Double percl) {
+    public AbstractHnJianya(String date, String no, String name, Integer zx, Integer xz, Integer lrxg, Integer lrsq, Integer jhxg, Integer jhsq, Integer pjcs, Integer pjfs, Integer sbyy, Integer cslr, Integer zyfs, Double xllrxg, Double xllrsq, Double xljhxg, Double xljhsq, Double xlpjcs, Double xlpjfs, Double xlsbyy, Double xlcslr, Double xlzyfs, Integer lrcc, Double lclv, Integer jhcc, Double jclv, Integer tp, Double tplv, Integer cx, Double cxlv, Double zhcl, Integer ywl, Double sumxl, Double ccl, Double percl) {
         this.date = date;
         this.no = no;
         this.name = name;
@@ -68,6 +72,8 @@ public abstract class AbstractHnJianya  implements java.io.Serializable {
         this.pjcs = pjcs;
         this.pjfs = pjfs;
         this.sbyy = sbyy;
+        this.cslr = cslr;
+        this.zyfs = zyfs;
         this.xllrxg = xllrxg;
         this.xllrsq = xllrsq;
         this.xljhxg = xljhxg;
@@ -75,6 +81,8 @@ public abstract class AbstractHnJianya  implements java.io.Serializable {
         this.xlpjcs = xlpjcs;
         this.xlpjfs = xlpjfs;
         this.xlsbyy = xlsbyy;
+        this.xlcslr = xlcslr;
+        this.xlzyfs = xlzyfs;
         this.lrcc = lrcc;
         this.lclv = lclv;
         this.jhcc = jhcc;
@@ -197,6 +205,22 @@ public abstract class AbstractHnJianya  implements java.io.Serializable {
         this.sbyy = sbyy;
     }
 
+    public Integer getCslr() {
+        return this.cslr;
+    }
+    
+    public void setCslr(Integer cslr) {
+        this.cslr = cslr;
+    }
+
+    public Integer getZyfs() {
+        return this.zyfs;
+    }
+    
+    public void setZyfs(Integer zyfs) {
+        this.zyfs = zyfs;
+    }
+
     public Double getXllrxg() {
         return this.xllrxg;
     }
@@ -251,6 +275,22 @@ public abstract class AbstractHnJianya  implements java.io.Serializable {
     
     public void setXlsbyy(Double xlsbyy) {
         this.xlsbyy = xlsbyy;
+    }
+
+    public Double getXlcslr() {
+        return this.xlcslr;
+    }
+    
+    public void setXlcslr(Double xlcslr) {
+        this.xlcslr = xlcslr;
+    }
+
+    public Double getXlzyfs() {
+        return this.xlzyfs;
+    }
+    
+    public void setXlzyfs(Double xlzyfs) {
+        this.xlzyfs = xlzyfs;
     }
 
     public Integer getLrcc() {

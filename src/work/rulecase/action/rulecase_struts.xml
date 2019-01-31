@@ -83,6 +83,12 @@
 		<action name="rulehgimport" class="work.rulecase.action.hegui.RuleHgImport">
 			<result name="success">/page/public/success.jsp</result>
 		</action>
+		<action name="rulehgmngop" class="work.rulecase.action.hegui.Rulehgmngop">
+			<result name="success">/page/rulecase/hegui/rulehgmngop.jsp</result>
+		</action>
+		<action name="mgopset" class="work.rulecase.action.hegui.Mgopset">
+			<result name="success">/page/public/successnoreturn.jsp</result>
+		</action>
 		<!-- rulemg -->
 		<action name="ruleselect" class="work.rulecase.action.RuleSelect">
 			<result name="success">/page/rulecase/ruleajax.jsp</result>

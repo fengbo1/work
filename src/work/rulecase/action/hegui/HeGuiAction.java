@@ -220,7 +220,7 @@ public String execute() throws Exception{
 				rhb.setArea(rr.getArea());
 				if(rr.getPool().equals("1"))
 				{
-					sql = "from RcRule where plate='合规业务' and part='"+rr.getPart()+"' and pool='2'";
+					sql = "from RcRule where plate='合规业务' and part='"+rr.getPart()+"' and pool='2' and facA='1'";
 					List<RcRule> listtmp = session.createQuery(sql).list();
 					rhb.setFactor(listtmp);
 				}

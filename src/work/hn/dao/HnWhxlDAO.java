@@ -48,6 +48,9 @@ public class HnWhxlDAO extends BaseHibernateDAO  {
 	public static final String CSLR895 = "cslr895";
 	public static final String ZYFS895 = "zyfs895";
 	public static final String PJSH895 = "pjsh895";
+	public static final String RLCS895 = "rlcs895";
+	public static final String RLFS895 = "rlfs895";
+	public static final String RLSB895 = "rlsb895";
 	public static final String PCTWH = "pctwh";
 	public static final String ZYCSWH = "zycswh";
 	public static final String ZYFSWH = "zyfswh";
@@ -58,11 +61,20 @@ public class HnWhxlDAO extends BaseHibernateDAO  {
 	public static final String PJCSWH = "pjcswh";
 	public static final String PJFSWH = "pjfswh";
 	public static final String SBYYWH = "sbyywh";
+	public static final String DGHCCSWH = "dghccswh";
+	public static final String DGHCFSWH = "dghcfswh";
+	public static final String DGHRCSWH = "dghrcswh";
+	public static final String DGHRFSWH = "dghrfswh";
 	public static final String PCTJY = "pctjy";
 	public static final String PJCSJY = "pjcsjy";
 	public static final String PJFSJY = "pjfsjy";
 	public static final String LRXGJY = "lrxgjy";
 	public static final String LRSQJY = "lrsqjy";
+	public static final String JHXGJY = "jhxgjy";
+	public static final String JHSQJY = "jhsqjy";
+	public static final String SBYYJY = "sbyyjy";
+	public static final String CSLRJY = "cslrjy";
+	public static final String ZYFSJY = "zyfsjy";
 
 
 
@@ -282,6 +294,24 @@ public class HnWhxlDAO extends BaseHibernateDAO  {
 		);
 	}
 	
+	public List findByRlcs895(Object rlcs895
+	) {
+		return findByProperty(RLCS895, rlcs895
+		);
+	}
+	
+	public List findByRlfs895(Object rlfs895
+	) {
+		return findByProperty(RLFS895, rlfs895
+		);
+	}
+	
+	public List findByRlsb895(Object rlsb895
+	) {
+		return findByProperty(RLSB895, rlsb895
+		);
+	}
+	
 	public List findByPctwh(Object pctwh
 	) {
 		return findByProperty(PCTWH, pctwh
@@ -342,6 +372,30 @@ public class HnWhxlDAO extends BaseHibernateDAO  {
 		);
 	}
 	
+	public List findByDghccswh(Object dghccswh
+	) {
+		return findByProperty(DGHCCSWH, dghccswh
+		);
+	}
+	
+	public List findByDghcfswh(Object dghcfswh
+	) {
+		return findByProperty(DGHCFSWH, dghcfswh
+		);
+	}
+	
+	public List findByDghrcswh(Object dghrcswh
+	) {
+		return findByProperty(DGHRCSWH, dghrcswh
+		);
+	}
+	
+	public List findByDghrfswh(Object dghrfswh
+	) {
+		return findByProperty(DGHRFSWH, dghrfswh
+		);
+	}
+	
 	public List findByPctjy(Object pctjy
 	) {
 		return findByProperty(PCTJY, pctjy
@@ -369,6 +423,36 @@ public class HnWhxlDAO extends BaseHibernateDAO  {
 	public List findByLrsqjy(Object lrsqjy
 	) {
 		return findByProperty(LRSQJY, lrsqjy
+		);
+	}
+	
+	public List findByJhxgjy(Object jhxgjy
+	) {
+		return findByProperty(JHXGJY, jhxgjy
+		);
+	}
+	
+	public List findByJhsqjy(Object jhsqjy
+	) {
+		return findByProperty(JHSQJY, jhsqjy
+		);
+	}
+	
+	public List findBySbyyjy(Object sbyyjy
+	) {
+		return findByProperty(SBYYJY, sbyyjy
+		);
+	}
+	
+	public List findByCslrjy(Object cslrjy
+	) {
+		return findByProperty(CSLRJY, cslrjy
+		);
+	}
+	
+	public List findByZyfsjy(Object zyfsjy
+	) {
+		return findByProperty(ZYFSJY, zyfsjy
 		);
 	}
 	

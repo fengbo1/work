@@ -250,6 +250,32 @@ public class HnConfigDAO extends BaseHibernateDAO  {
     	}
     }
     /**
+     * 根据业务编码和环节查询折算系数
+     * @param code
+     * @param part
+     * @return
+     */
+    public String findWeightByCodeAndPart(String code,String part) {
+    	log.debug("finding all HnConfig instances");
+    	try {
+    		String queryString = "from HnConfig as hc where hc.code like '%"+code+"%' and hc.part='"+part+"'";
+             Query queryObject = getSession().createQuery(queryString);
+    		 List list = queryObject.list();
+    		 if(list.isEmpty())
+    		 {
+    			 return "0.0";
+    		 }
+    		 else
+    		 {
+    			 HnConfig hc = (HnConfig) list.get(0);
+    			 return hc.getWeig();
+    		 }
+    	} catch (RuntimeException re) {
+    		log.error("find all failed", re);
+    		throw re;
+    	}
+    }
+    /**
      * 根据业务种类和环节查询
      * @param code
      * @param part
@@ -458,6 +484,48 @@ public class HnConfigDAO extends BaseHibernateDAO  {
 				if(hc!=null)
 					xs.setXs13(hc.getWeig());
 			}
+    		if(size>13)
+			{
+				hc = hcdao.findAllByTypeAndPart(2,Tld.RMB_FZW[13]);
+				if(hc!=null)
+					xs.setXs14(hc.getWeig());
+			}
+    		if(size>14)
+			{
+				hc = hcdao.findAllByTypeAndPart(2,Tld.RMB_FZW[14]);
+				if(hc!=null)
+					xs.setXs15(hc.getWeig());
+			}
+    		if(size>15)
+			{
+				hc = hcdao.findAllByTypeAndPart(2,Tld.RMB_FZW[15]);
+				if(hc!=null)
+					xs.setXs16(hc.getWeig());
+			}
+    		if(size>16)
+			{
+				hc = hcdao.findAllByTypeAndPart(2,Tld.RMB_FZW[16]);
+				if(hc!=null)
+					xs.setXs17(hc.getWeig());
+			}
+    		if(size>17)
+			{
+				hc = hcdao.findAllByTypeAndPart(2,Tld.RMB_FZW[17]);
+				if(hc!=null)
+					xs.setXs18(hc.getWeig());
+			}
+    		if(size>18)
+			{
+				hc = hcdao.findAllByTypeAndPart(2,Tld.RMB_FZW[18]);
+				if(hc!=null)
+					xs.setXs19(hc.getWeig());
+			}
+    		if(size>19)
+			{
+				hc = hcdao.findAllByTypeAndPart(2,Tld.RMB_FZW[19]);
+				if(hc!=null)
+					xs.setXs20(hc.getWeig());
+			}
     	}
     	
     	else if(type==3)//外汇
@@ -538,7 +606,26 @@ public class HnConfigDAO extends BaseHibernateDAO  {
     		if(size>12)
 			{
 				hc = hcdao.findAllByTypeAndPart(3,Tld.WAIHUI[12]);
+				if(hc!=null)
     			xs.setXs13(hc.getWeig());
+			}
+    		if(size>13)
+			{
+				hc = hcdao.findAllByTypeAndPart(3,Tld.WAIHUI[13]);
+				if(hc!=null)
+    			xs.setXs14(hc.getWeig());
+			}
+    		if(size>14)
+			{
+				hc = hcdao.findAllByTypeAndPart(3,Tld.WAIHUI[14]);
+				if(hc!=null)
+    			xs.setXs15(hc.getWeig());
+			}
+    		if(size>15)
+			{
+				hc = hcdao.findAllByTypeAndPart(3,Tld.WAIHUI[15]);
+				if(hc!=null)
+    			xs.setXs16(hc.getWeig());
 			}
     	}
     	else if(type==6)//建亚
@@ -621,6 +708,24 @@ public class HnConfigDAO extends BaseHibernateDAO  {
 				hc = hcdao.findAllByTypeAndPart(6,Tld.JIANYA[12]);
 				if(hc!=null)
     			xs.setXs13(hc.getWeig());
+			}
+    		if(size>13)
+			{
+				hc = hcdao.findAllByTypeAndPart(6,Tld.JIANYA[13]);
+				if(hc!=null)
+    			xs.setXs14(hc.getWeig());
+			}
+    		if(size>14)
+			{
+				hc = hcdao.findAllByTypeAndPart(6,Tld.JIANYA[14]);
+				if(hc!=null)
+    			xs.setXs15(hc.getWeig());
+			}
+    		if(size>15)
+			{
+				hc = hcdao.findAllByTypeAndPart(6,Tld.JIANYA[15]);
+				if(hc!=null)
+    			xs.setXs16(hc.getWeig());
 			}
     	}
     	return xs;

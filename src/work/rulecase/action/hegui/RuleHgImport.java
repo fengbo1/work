@@ -12,6 +12,7 @@ import org.hibernate.Transaction;
 import work.rulecase.action.RuleImport;
 import work.rulecase.dao.RcRuleDAO;
 import work.rulecase.pojo.RcRule;
+import work.util.Tld;
 import work.util.UploadUtil;
 import work.util.YearSeason;
 import ccb.hibernate.HibernateSessionFactory;
@@ -65,7 +66,7 @@ public class RuleHgImport {
 		int nn=0;
 		YearSeason ys = new YearSeason();
 		RcRuleDAO rrdao = new RcRuleDAO();
-		String realpath = "D:/import/work/rulecase/";
+		String realpath = Tld.uploadpath+"rulecase/";
 		message = "导入成功";
 		Workbook workbook = null;
 		String date = ys.getStringDate();

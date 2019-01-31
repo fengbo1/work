@@ -44,6 +44,10 @@ public abstract class AbstractHn895  implements java.io.Serializable {
      private Double xlRlfs;
      private Integer rlsb;
      private Double xlRlsb;
+     private Integer kdfh;
+     private Double xlKdfh;
+     private Integer fyhd;
+     private Double xlFyhd;
      private Integer lrcc;
      private Integer jhcc;
      private Double lrccl;
@@ -68,7 +72,7 @@ public abstract class AbstractHn895  implements java.io.Serializable {
 
     
     /** full constructor */
-    public AbstractHn895(String time, String no, String name, Integer bmsb, Double xlBmsb, Integer yxcf, Double xlYxcf, Integer lrxg, Double xlLrxg, Integer lrsq, Double xlLrsq, Integer jhxg, Double xlJhxg, Integer jhsq, Double xlJhsq, Integer sbyy, Double xlSbyy, Integer cslr, Double xlCslr, Integer zyfs, Double xlZyfs, Integer shsh, Double xlShsh, Integer shsb, Double xlShsb, Integer rlcs, Double xlRlcs, Integer rlfs, Double xlRlfs, Integer rlsb, Double xlRlsb, Integer lrcc, Integer jhcc, Double lrccl, Double jhccl, Integer lrtp, Double lrtpl, Double ccl, Integer cx, Double cxl, Double zhcl, Integer ywl, Double sumxl, Integer zx, Integer xz) {
+    public AbstractHn895(String time, String no, String name, Integer bmsb, Double xlBmsb, Integer yxcf, Double xlYxcf, Integer lrxg, Double xlLrxg, Integer lrsq, Double xlLrsq, Integer jhxg, Double xlJhxg, Integer jhsq, Double xlJhsq, Integer sbyy, Double xlSbyy, Integer cslr, Double xlCslr, Integer zyfs, Double xlZyfs, Integer shsh, Double xlShsh, Integer shsb, Double xlShsb, Integer rlcs, Double xlRlcs, Integer rlfs, Double xlRlfs, Integer rlsb, Double xlRlsb, Integer kdfh, Double xlKdfh, Integer fyhd, Double xlFyhd, Integer lrcc, Integer jhcc, Double lrccl, Double jhccl, Integer lrtp, Double lrtpl, Double ccl, Integer cx, Double cxl, Double zhcl, Integer ywl, Double sumxl, Integer zx, Integer xz) {
         this.time = time;
         this.no = no;
         this.name = name;
@@ -100,6 +104,10 @@ public abstract class AbstractHn895  implements java.io.Serializable {
         this.xlRlfs = xlRlfs;
         this.rlsb = rlsb;
         this.xlRlsb = xlRlsb;
+        this.kdfh = kdfh;
+        this.xlKdfh = xlKdfh;
+        this.fyhd = fyhd;
+        this.xlFyhd = xlFyhd;
         this.lrcc = lrcc;
         this.jhcc = jhcc;
         this.lrccl = lrccl;
@@ -373,6 +381,38 @@ public abstract class AbstractHn895  implements java.io.Serializable {
     
     public void setXlRlsb(Double xlRlsb) {
         this.xlRlsb = xlRlsb;
+    }
+
+    public Integer getKdfh() {
+        return this.kdfh;
+    }
+    
+    public void setKdfh(Integer kdfh) {
+        this.kdfh = kdfh;
+    }
+
+    public Double getXlKdfh() {
+        return this.xlKdfh;
+    }
+    
+    public void setXlKdfh(Double xlKdfh) {
+        this.xlKdfh = xlKdfh;
+    }
+
+    public Integer getFyhd() {
+        return this.fyhd;
+    }
+    
+    public void setFyhd(Integer fyhd) {
+        this.fyhd = fyhd;
+    }
+
+    public Double getXlFyhd() {
+        return this.xlFyhd;
+    }
+    
+    public void setXlFyhd(Double xlFyhd) {
+        this.xlFyhd = xlFyhd;
     }
 
     public Integer getLrcc() {

@@ -7,7 +7,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE>
 <html>
   <head>
     
@@ -210,21 +210,21 @@ show('onload');
 				<tr height="20px" class="qq">
 					<td colspan="27" align="center">
 							<c:if test="${role>'0'||zhi!='3'}">
-							姓名/工号关键字查询
-							<input id="word" type="text"  style="width: 50px" name="word" onpropertychange="show('date')"/>
+							姓名/工号关键字
+							<input id="word" type="text"  style="width: 50px" name="word" oninput="show('date')"/>
 							</c:if>
 							<c:if test="${role=='0'&&zhi=='3'}">
 							<input id="word" type="hidden"  style="width: 50px" name="word" value=""/>
 							</c:if>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="ddd" align="left">日期</div>
 							<div class="ddd" align="left" style="">
-								<input size="9" type="text" name="date" id="date" class="Wdate" value="${date}" onClick="WdatePicker()" onpropertychange="show()">
+								<input size="9" type="text" name="date" id="date" class="Wdate" value="${date}" onClick="WdatePicker()" onchange="show()">
 							</div>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="ddd" align="left">自定义群组</div>
 							<div class="ddd" align="left">
-								<select id="qz" name="qz" style="width: 140px" onpropertychange="show('qz')">
+								<select id="qz" name="qz" style="width: 140px" onchange="show('qz')">
 								<option value="all">全部</option>
 								<c:forEach items="${listqz}" var="qz" varStatus="status">
 								<option value="${qz.value}">${qz.name}</option>
@@ -232,15 +232,15 @@ show('onload');
 							    </select>
 							</div>
 							<c:if test="${role>'0'||zhi!='3'}">
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="ddd" align="left">人员属性群组</div>
 							<img id="xs" src="images/show.PNG" alt="展开其余选项" width="20" height="20" style="cursor:hand" onclick="showxz()"/>
 							<img id="yc" src="images/hide.PNG" alt="关闭其余选项" width="20" height="20" style="cursor:hand" onclick="hidexz()"/>		
 							</c:if>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="ddd" align="left">指标</div>
 							<div class="ddd" align="left">
-								<select id="zhibiao" name="zhibiao" style="width: 140px" onpropertychange="show('zhibiao')">
+								<select id="zhibiao" name="zhibiao" style="width: 140px" onchange="show('zhibiao')">
 								<option value="rjcl">当月日均产量</option>
 								<option value="rjccl">日均差错率</option>
 								<option value="rjxl">日均效率</option>
@@ -256,24 +256,25 @@ show('onload');
 							    </select>
 							</div>
 							<div class="ddd" align="left">
-								<select id="sequence" name="sequence" style="width: 60px"  onpropertychange="show('sequence')">
+								<select id="sequence" name="sequence" style="width: 60px"  onchange="show('sequence')">
 								<option value="1">倒序</option>
 								<option value="0">正序</option>
-							    </select>	
+							    </select>
+							    <input type="button" value="查询" onclick="show()"/>
 							</div>
 							<input type="hidden" name="position" id="position" value="${position}"/>
 							<input type="hidden" name="choice" id="choice" value="${choice}"/>
-							<input type="hidden" name="role" id="role" value="${role}"/>
+							<input type="hidden" name="role" id="role" value="${role}"/> 
 					</td>
 				</tr>
 				<tr height="20px" class="qq" id="xuanxiang" align="center">
 					<td colspan="27">
 						<c:forEach items="${part}" var="p" varStatus="status">
-							<input type="checkbox" name="part" value="${p.value}" onpropertychange="show()"/>${p.name}&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="part" value="${p.value}" onchange="show()"/>${p.name}&nbsp;&nbsp;&nbsp;&nbsp;
 						</c:forEach>
 						<div class="ddd" align="left">中心</div>
 							<div class="ddd" align="left">
-								<select id="zx" name="zx" style="width: 80px" onpropertychange="show('zx')">
+								<select id="zx" name="zx" style="width: 80px" onchange="show('zx')">
 								<option value="0">成都中心</option>
 								<option value="1">武汉中心</option>
 								<option value="all">全部</option>
@@ -282,7 +283,7 @@ show('onload');
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="ddd" align="left">处室</div>
 							<div class="ddd" align="left">
-								<select id="chu" name="chu" style="width: 80px" onpropertychange="show('chu')">
+								<select id="chu" name="chu" style="width: 80px" onchange="show('chu')">
 								<option value="all">全部</option>
 								<option value="1">综合</option>
 								<option value="2">合规</option>
@@ -294,7 +295,7 @@ show('onload');
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="ddd" align="left">班组</div>
 							<div id="ttt" class="ddd" align="left">
-								<select id="team" name="team" style="width: 80px" onpropertychange="show('team')">
+								<select id="team" name="team" style="width: 80px" onchange="show('team')">
 								<option value="all">全部</option>
 								<option value="1">一组</option>
 							    </select>
@@ -303,11 +304,10 @@ show('onload');
 						<c:forEach items="${listcxb}" var="cxb" varStatus="status">
 								 <c:if test="${status.count=='3'||status.count=='11'||status.count=='19'}"><br/></c:if>
 								 ${cxb.type} 
-								<select id="${cxb.tid}" name="para" style="width: 80px" onpropertychange="show('para')">
+								<select id="${cxb.tid}" name="para" style="width: 80px" onchange="show('para')">
 									<option value="all">全部</option>
 									<c:forEach items="${cxb.contents}" var="cx" varStatus="status">
 										<option value="${cx.cnum}">${cx.content}</option>
-										
 									</c:forEach>
 							    </select>
 							   &nbsp;&nbsp;&nbsp;&nbsp;

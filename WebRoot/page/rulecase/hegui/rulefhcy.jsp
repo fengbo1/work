@@ -92,11 +92,11 @@ highlight();
 	     }
 
 	     var reg1=new RegExp("∧","g"); 
-	     //var reg2=new RegExp(";","g");
+	     var reg2=new RegExp("。","g");
 	     $('span').each(function()//遍历文章；
 	             {
 	                var html = $(this).html();
-	                var newHtml1 = html.replace(reg1, '<br/>');//回车符
+	                var newHtml1 = html.replace(reg2, '。<br/>');//回车符
 	                $(this).html(newHtml1);//更新文章；
 	     });
 	 }
@@ -146,7 +146,7 @@ highlight();
 					</td>
 				</tr>
 				<tr height="40px" class="表格表头背景1" id="hang">
-					<td width="40px" align="center" valign="middle" nowrap
+					<td width="40px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -154,7 +154,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="100px" align="center" valign="middle" nowrap
+					<td width="60px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -162,7 +162,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="100px" align="center" valign="middle" nowrap
+					<td width="60px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -170,7 +170,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="150px" align="center" valign="middle" nowrap
+					<td width="60px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -178,7 +178,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="150px" align="center" valign="middle" nowrap
+					<td width="600px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -186,7 +186,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="150px" align="center" valign="middle" nowrap
+					<td width="60px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -194,7 +194,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="100px" align="center" valign="middle" nowrap
+					<td width="60px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -202,7 +202,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="100px" align="center" valign="middle" nowrap
+					<td width="60px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -210,7 +210,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="100px" align="center" valign="middle" nowrap
+					<td width="60px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -218,7 +218,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="100px" align="center" valign="middle" nowrap
+					<td width="60px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -226,7 +226,7 @@ highlight();
 							</p>
 						</div>
 					</td>
-					<td width="100px" align="center" valign="middle" nowrap
+					<td width="80px" align="center" valign="middle"
 						bordercolor=none>
 						<div align="center">
 							<p>
@@ -245,62 +245,64 @@ highlight();
 					<table  align="center" style="border: 0px; " cellpadding="0" cellspacing="2" >
 				<c:forEach items="${list}" var="rule" varStatus="status">
 					<tr id="hang" class="btbj" style="height: 20px">
-						<td height="25" width="40px" align="center" valign="middle" nowrap>
+						<td height="25" width="40px" align="center" valign="middle">
 							<div align="center">
 								${status.index+1+(currentPage-1)*pageSize}
 							</div>
 						</td>
-						<td height="25" width="100px" align="center" valign="middle">
+						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
 								${rule.part}
 							</div>
 						</td>
-						<td height="25" width="100px" align="center" valign="middle">
+						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
 								${rule.area}
 							</div>
 						</td>
-						<td height="25" width="150px" align="center" valign="middle">
+						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
 								<span>${rule.remark}</span>
 							</div>
 						</td>
-						<td height="25" width="150px" align="center" valign="middle">
-							<div align="center" style="word-break:break-all;">
+						<td height="25" width="600px" align="center" valign="middle">
+							<div align="left" style="word-break:break-all;">
 								<span>${rule.rule}</span>
 							</div>
 						</td>
-						<td height="25" width="150px" align="center" valign="middle">
-							<div align="center" style="word-break:break-all;">
+						<td height="25" width="60px" align="center" valign="middle">
+							<div align="left" style="word-break:break-all;">
 								<span>${rule.exp}</span>
 							</div>
 						</td>
-						<td height="25" width="100px" align="center" valign="middle">
+						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
 								<span>${rule.facB}</span>
 							</div>
 						</td>
-						<td height="25" width="100px" align="center" valign="middle">
+						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
 								<span>${rule.facC}</span>
 							</div>
 						</td>
-						<td height="25" width="100px" align="center" valign="middle">
+						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
 								<span>${rule.facA}</span>
 							</div>
 						</td>
-						<td height="25" width="100px" align="center" valign="middle">
+						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
 								<span>
 									${rule.fujian}
 								</span>
 							</div>
 						</td>
-						<td height="25" width="80px" align="center" valign="middle">
+						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
+								<c:if test="${role=='11'}">
 								<input type="button" value="修改" onclick="toupdate('${rule.id}');"><br/>
 								<input type="button" value="删除" onclick="delrule('${rule.id}');">
+								</c:if>
 							</div>
 						</td>
 					</tr>
@@ -326,8 +328,10 @@ highlight();
 								</div></td>
 							<td colspan="3">
 								<div align="center">
+								<c:if test="${role=='11'}">
 								<input type="button" value="新增" onclick="xinzeng();">
 								<input type="button" value="导入" onclick="importhg();">
+								</c:if>
 								</div>
 							</td>	
 						</tr>

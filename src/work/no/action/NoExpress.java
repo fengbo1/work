@@ -131,7 +131,7 @@ public class NoExpress {
 			nb.setRole(no.getRole());
 			nb.setPosition(no.getPosition());
 			nb.setZx(Tld.zxToString(no.getZx()));
-			nb.setXz(String.valueOf(no.getXz()));
+			nb.setXz(Tld.xzintToShortString(no.getXz()));
 			nb.setXzwh(String.valueOf(no.getXzwh()));
 			nb.setXzjh(String.valueOf(no.getXzjh()));
 			nb.setXzsh(String.valueOf(no.getXzsh()));

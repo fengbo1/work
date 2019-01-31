@@ -13,6 +13,7 @@ import org.hibernate.Transaction;
 import work.userinfo.dao.UserInfoDAO;
 import work.userinfo.pojo.UserInfo;
 import work.util.GeneralCheck;
+import work.util.Tld;
 import work.util.UploadUtil;
 import work.util.YearSeason;
 import work.wb.pojo.WbInit;
@@ -102,7 +103,7 @@ public class Internal {
 	 */
 	public String execute() throws Exception {
         //D:\apache-tomcat-6.0.18\webapps\struts2_upload\images
-	   String  realpath = "D:/import/work/";
+	   String  realpath = Tld.uploadpath;
 	   SplitFile splitfile=new SplitFile();
 	   splitfile=FileSwitch(fileFileName);
 	   String tmpdate=splitfile.getDate();
@@ -325,9 +326,10 @@ public class Internal {
 		//ArrayList<Pool> list = new ArrayList<Pool>();
 		String result = "";
 		UploadUtil uu = new UploadUtil();
-		Transaction trans = null;
+		
 		truncate("pool");
     	Session session = HibernateSessionFactory.getSession();
+    	Transaction trans=session.beginTransaction();
 		int nn=0;
 		try {
 			org.apache.poi.ss.usermodel.Workbook workbook = null;
@@ -337,7 +339,7 @@ public class Internal {
 			org.apache.poi.ss.usermodel.Sheet sheet = workbook.getSheetAt(0);
 			// 得到第一列第一行的单元格
 			nn = sheet.getLastRowNum()+1;
-        	trans=session.beginTransaction();
+        	
         	
         	PoolDAO pdao = new PoolDAO();
 			for (int i = 1; i < nn; i++) {
@@ -899,21 +901,33 @@ public class Internal {
 					xl.setCslr895(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(22, i))));
 					xl.setZyfs895(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(23, i))));
 					xl.setPjsh895(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(24, i))));
-					xl.setPctwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(25, i))));
-					xl.setZycswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(26, i))));
-					xl.setZyfswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(27, i))));
-					xl.setLrxgwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(28, i))));
-					xl.setLrsqwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(29, i))));
-					xl.setJhxgwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(30, i))));
-					xl.setJhsqwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(31, i))));
-					xl.setPjcswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(32, i))));
-					xl.setPjfswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(33, i))));
-					xl.setSbyywh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(34, i))));
-					xl.setPctjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(35, i))));
-					xl.setPjcsjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(36, i))));
-					xl.setPjfsjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(37, i))));
-					xl.setLrxgjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(38, i))));
-					xl.setLrsqjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(39, i))));
+					xl.setRlcs895(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(25, i))));
+					xl.setRlfs895(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(26, i))));
+					xl.setRlsb895(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(27, i))));
+					xl.setPctwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(28, i))));
+					xl.setZycswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(29, i))));
+					xl.setZyfswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(30, i))));
+					xl.setLrxgwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(31, i))));
+					xl.setLrsqwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(32, i))));
+					xl.setJhxgwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(33, i))));
+					xl.setJhsqwh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(34, i))));
+					xl.setPjcswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(35, i))));
+					xl.setPjfswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(36, i))));
+					xl.setSbyywh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(37, i))));
+					xl.setDghccswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(38, i))));
+					xl.setDghcfswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(39, i))));
+					xl.setDghrcswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(40, i))));
+					xl.setDghrfswh(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(41, i))));
+					xl.setPctjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(42, i))));
+					xl.setPjcsjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(43, i))));
+					xl.setPjfsjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(44, i))));
+					xl.setLrxgjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(45, i))));
+					xl.setLrsqjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(46, i))));
+					xl.setJhxgjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(47, i))));
+					xl.setJhsqjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(48, i))));
+					xl.setSbyyjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(49, i))));
+					xl.setCslrjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(50, i))));
+					xl.setZyfsjy(check.DoubleTo2(check.IsCellDouble(sheetxl.getCell(51, i))));
 					xldao.merge(xl);
 				}
 			}
@@ -931,12 +945,12 @@ public class Internal {
 					zl.setNo(listnonew.get(0).getNo891());
 					System.out.println(no);
 					zl.setName(check.IsNullString(sheetzl.getCell(2, i).getContents()));
-					zl.setCxlrmb(check.DoubleTo4(check.IsCellDouble(sheetzl.getCell(10, i))));
-					zl.setQdld(check.IsCellInteger(sheetzl.getCell(11, i)));
-					zl.setZwdl(check.DoubleTo4(check.IsCellDouble(sheetzl.getCell(12, i))));
-					zl.setBhwh(check.IsCellInteger(sheetzl.getCell(15, i)));
-					zl.setCxlwh(check.DoubleTo4(check.IsCellDouble(sheetzl.getCell(17, i))));
-					zl.setCxljy(check.DoubleTo4(check.IsCellDouble(sheetzl.getCell(20, i))));
+					zl.setCxlrmb(check.DoubleTo4(check.IsCellDouble(sheetzl.getCell(12, i))));
+					zl.setQdld(check.IsCellInteger(sheetzl.getCell(13, i)));
+					zl.setZwdl(check.DoubleTo4(check.IsCellDouble(sheetzl.getCell(14, i))));
+					zl.setBhwh(check.IsCellInteger(sheetzl.getCell(17, i))+check.IsCellInteger(sheetzl.getCell(18, i))+check.IsCellInteger(sheetzl.getCell(19, i)));
+					zl.setCxlwh(check.DoubleTo4(check.IsCellDouble(sheetzl.getCell(21, i))));
+					zl.setCxljy(check.DoubleTo4(check.IsCellDouble(sheetzl.getCell(25, i))));
 					zldao.merge(zl);
 				}
 			}
@@ -948,18 +962,18 @@ public class Internal {
 			sql = "update hn891_ls set sumxl=(bmsb*xl_bmsb+yxcf*xl_yxcf+lrxg*xl_lrxg+lrsq*xl_lrsq+jhxg*xl_jhxg+jhsq*xl_jhsq+sbyy*xl_sbyy+yxbz*xl_yxbz+cslr*xl_cslr+zyfs*xl_zyfs),cx=CAST(ywl*cxl AS DECIMAL(18,0))";
 			session.createSQLQuery(sql).executeUpdate();
 			//895
-			sql = "update hn895_ls a,t_hn_whxl b set a.xl_bmsb=b.bmsb895,a.xl_yxcf=b.yxcf895,a.xl_lrxg=b.lrxg895,a.xl_lrsq=b.lrsq895,a.xl_jhxg=b.jhxg895,a.xl_jhsq=b.jhsq895,a.xl_sbyy=b.sbyy895 where a.no=b.no and a.time=b.date";
+			sql = "update hn895_ls a,t_hn_whxl b set a.xl_bmsb=b.bmsb895,a.xl_yxcf=b.yxcf895,a.xl_lrxg=b.lrxg895,a.xl_lrsq=b.lrsq895,a.xl_jhxg=b.jhxg895,a.xl_jhsq=b.jhsq895,a.xl_sbyy=b.sbyy895,a.xl_cslr=b.cslr895,a.xl_zyfs=b.zyfs895,a.xl_shsh=b.pjsh895,a.xl_rlcs=b.rlcs895,a.xl_rlfs=b.rlfs895,a.xl_rlsb=b.rlsb895 where a.no=b.no and a.time=b.date";
 			session.createSQLQuery(sql).executeUpdate();
 			sql = "update hn895_ls a,t_hn_whzl b set a.cxl=b.cxlrmb where a.no=b.no and a.time=b.date";
 			session.createSQLQuery(sql).executeUpdate();
-			sql = "update hn895_ls set sumxl=(bmsb*xl_bmsb+yxcf*xl_yxcf+lrxg*xl_lrxg+lrsq*xl_lrsq+jhxg*xl_jhxg+jhsq*xl_jhsq+sbyy*xl_sbyy),cx=CAST(ywl*cxl AS DECIMAL(18,0))";
+			sql = "update hn895_ls set sumxl=(bmsb*xl_bmsb+yxcf*xl_yxcf+lrxg*xl_lrxg+lrsq*xl_lrsq+jhxg*xl_jhxg+jhsq*xl_jhsq+sbyy*xl_sbyy+cslr*xl_cslr+zyfs*xl_zyfs+shsh*xl_shsh+shsb*xl_shsb+rlcs*xl_rlcs+rlfs*xl_rlfs+rlsb*xl_rlsb),cx=CAST(ywl*cxl AS DECIMAL(18,0))";
 			session.createSQLQuery(sql).executeUpdate();
 			//waihui
-			sql = "update t_hn_waihui_ls a,t_hn_whxl b set a.xlzycs=b.zycswh,a.xlzyfs=b.zyfswh,a.xllrxg=b.lrxgwh,a.xllrsq=b.lrsqwh,a.xljhxg=b.jhxgwh,a.xljhsq=b.jhsqwh,a.xlpjcs=b.pjcswh,a.xlpjfs=b.pjfswh,a.xlsbyy=b.sbyywh where a.no=b.no and a.date=b.date";
+			sql = "update t_hn_waihui_ls a,t_hn_whxl b set a.xlzycs=b.zycswh,a.xlzyfs=b.zyfswh,a.xllrxg=b.lrxgwh,a.xllrsq=b.lrsqwh,a.xljhxg=b.jhxgwh,a.xljhsq=b.jhsqwh,a.xlpjcs=b.pjcswh,a.xlpjfs=b.pjfswh,a.xlsbyy=b.sbyywh,a.xldgcs=b.dghccswh,a.xldgfs=b.dghcfswh,a.xlhrcs=b.dghrcswh,a.xlhrfs=b.dghrfswh where a.no=b.no and a.date=b.date";
 			session.createSQLQuery(sql).executeUpdate();
 			sql = "update t_hn_waihui_ls a,t_hn_whzl b set a.cxlv=b.cxlwh,a.bh=b.bhwh where a.no=b.no and a.date=b.date";
 			session.createSQLQuery(sql).executeUpdate();
-			sql = "update t_hn_waihui_ls set sumxl=(zycs*xlzycs+zyfs*xlzyfs+lrxg*xllrxg+lrsq*xllrsq+jhxg*xljhxg+jhsq*xljhsq+pjcs*xlpjcs+pjfs*xlpjfs+sbyy*xlsbyy),cx=CAST(cxlv*ywl AS DECIMAL(18,0)) where date='"+idate+"'";
+			sql = "update t_hn_waihui_ls set sumxl=(zycs*xlzycs+zyfs*xlzyfs+lrxg*xllrxg+lrsq*xllrsq+jhxg*xljhxg+jhsq*xljhsq+pjcs*xlpjcs+pjfs*xlpjfs+sbyy*xlsbyy+dgcs*xldgcs+dgfs*xldgfs+hrcs*xlhrcs+hrfs*xlhrfs),cx=CAST(cxlv*ywl AS DECIMAL(18,0)) where date='"+idate+"'";
 			session.createSQLQuery(sql).executeUpdate();
 			sql = "update t_hn_waihui_ls set percl=CAST(sumxl/zhcl AS DECIMAL(18,2)),bhl=CAST(bh/zyfs AS DECIMAL(18,4))";
 			session.createSQLQuery(sql).executeUpdate();
@@ -981,9 +995,9 @@ public class Internal {
 			
 			sql = "insert into hn891(time,no,name,bmsb,xl_bmsb,yxcf,xl_yxcf,lrxg,xl_lrxg,lrsq,xl_lrsq,jhxg,xl_jhxg,jhsq,xl_jhsq,sbyy,xl_sbyy,yxbz,xl_yxbz,cslr,xl_cslr,zyfs,xl_zyfs,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl,ccl,cx,cxl,zhcl,ywl,sumxl,zx,xz,remark1,remark2,remark3,remark4,remark5) select time,no,name,bmsb,xl_bmsb,yxcf,xl_yxcf,lrxg,xl_lrxg,lrsq,xl_lrsq,jhxg,xl_jhxg,jhsq,xl_jhsq,sbyy,xl_sbyy,yxbz,xl_yxbz,cslr,xl_cslr,zyfs,xl_zyfs,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl,ccl,cx,cxl,zhcl,ywl,sumxl,zx,xz,remark1,remark2,remark3,remark4,remark5 from hn891_ls where time='"+idate+"'";
 			session.createSQLQuery(sql).executeUpdate();
-			sql = "insert into hn895(time,no,name,bmsb,xl_bmsb,yxcf,xl_yxcf,lrxg,xl_lrxg,lrsq,xl_lrsq,jhxg,xl_jhxg,jhsq,xl_jhsq,sbyy,xl_sbyy,xyky,xl_xyky,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl,ccl,cx,cxl,zhcl,ywl,sumxl,zx,xz,remark1,remark2,remark3,remark4,remark5) select time,no,name,bmsb,xl_bmsb,yxcf,xl_yxcf,lrxg,xl_lrxg,lrsq,xl_lrsq,jhxg,xl_jhxg,jhsq,xl_jhsq,sbyy,xl_sbyy,xyky,xl_xyky,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl,ccl,cx,cxl,zhcl,ywl,sumxl,zx,xz,remark1,remark2,remark3,remark4,remark5 from hn895_ls where time='"+idate+"'";
+			sql = "insert into hn895(time,no,name,bmsb,xl_bmsb,yxcf,xl_yxcf,lrxg,xl_lrxg,lrsq,xl_lrsq,jhxg,xl_jhxg,jhsq,xl_jhsq,sbyy,xl_sbyy,cslr,xl_cslr,zyfs,xl_zyfs,shsh,xl_shsh,shsb,xl_shsb,rlcs,xl_rlcs,rlfs,xl_rlfs,rlsb,xl_rlsb,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl,ccl,cx,cxl,zhcl,ywl,sumxl,zx,xz) select time,no,name,bmsb,xl_bmsb,yxcf,xl_yxcf,lrxg,xl_lrxg,lrsq,xl_lrsq,jhxg,xl_jhxg,jhsq,xl_jhsq,sbyy,xl_sbyy,cslr,xl_cslr,zyfs,xl_zyfs,shsh,xl_shsh,shsb,xl_shsb,rlcs,xl_rlcs,rlfs,xl_rlfs,rlsb,xl_rlsb,lrcc,jhcc,lrccl,jhccl,lrtp,lrtpl,ccl,cx,cxl,zhcl,ywl,sumxl,zx,xz from hn895_ls where time='"+idate+"'";
 			session.createSQLQuery(sql).executeUpdate();
-			sql = "insert into t_hn_waihui(date,no,name,zx,xz,zycs,zyfs,lrxg,lrsq,jhxg,jhsq,pjcs,pjfs,sbyy,xlzycs,xlzyfs,xllrxg,xllrsq,xljhxg,xljhsq,xlpjcs,xlpjfs,xlsbyy,lrcc,lclv,jhcc,jclv,tp,tplv,cx,cxlv,zhcl,ywl,sumxl,ccl,percl,bh,bhl) select date,no,name,zx,xz,zycs,zyfs,lrxg,lrsq,jhxg,jhsq,pjcs,pjfs,sbyy,xlzycs,xlzyfs,xllrxg,xllrsq,xljhxg,xljhsq,xlpjcs,xlpjfs,xlsbyy,lrcc,lclv,jhcc,jclv,tp,tplv,cx,cxlv,zhcl,ywl,sumxl,ccl,percl,bh,bhl from t_hn_waihui_ls where date='"+idate+"'";
+			sql = "insert into t_hn_waihui(date,no,name,zx,xz,zycs,zyfs,lrxg,lrsq,jhxg,jhsq,pjcs,pjfs,sbyy,hrcs,hrfs,xlzycs,xlzyfs,xllrxg,xllrsq,xljhxg,xljhsq,xlpjcs,xlpjfs,xlsbyy,xlhrcs,xlhrfs,lrcc,lclv,jhcc,jclv,tp,tplv,cx,cxlv,zhcl,ywl,sumxl,ccl,percl,bh,bhl) select date,no,name,zx,xz,zycs,zyfs,lrxg,lrsq,jhxg,jhsq,pjcs,pjfs,sbyy,hrcs,hrfs,xlzycs,xlzyfs,xllrxg,xllrsq,xljhxg,xljhsq,xlpjcs,xlpjfs,xlsbyy,xlhrcs,xlhrfs,lrcc,lclv,jhcc,jclv,tp,tplv,cx,cxlv,zhcl,ywl,sumxl,ccl,percl,bh,bhl from t_hn_waihui_ls where date='"+idate+"'";
 			session.createSQLQuery(sql).executeUpdate();
 //			sql = "insert  into t_hn_detail(time,no,name,zx,xz,team,lrxg,xl_lrxg,ljlrsc,lrsq,xl_lrsq,jhxg,xl_jhxg,jhsq,xl_jhsq,ljlr,ljjh,ljlr895,ljjh895,tp,ljtp,lrcc,jhcc,cx,ljcx,output891,output895,output,ccl891,cxl891,tpl891,ccl895,cxl895,tpl895,ljcl,ljywl891,ljywl895,ljrjcl,rjclwcl,ljlrcc,ljjhcc,rjccl891,rjcxl891,rjtpl891,rjccl895,rjcxl895,rjtpl895,ljsxts,online,zyzl,remark1,remark2,remark3,remark4,remark5,qdlr,qdlrz,ljqdlr,ljqdlrz,qdlrzl,ljqdlrzl,percltime,zyccl) select time,no,name,zx,xz,team,lrxg,xl_lrxg,ljlrsc,lrsq,xl_lrsq,jhxg,xl_jhxg,jhsq,xl_jhsq,ljlr,ljjh,ljlr895,ljjh895,tp,ljtp,lrcc,jhcc,cx,ljcx,output891,output895,output,ccl891,cxl891,tpl891,ccl895,cxl895,tpl895,ljcl,ljywl891,ljywl895,ljrjcl,rjclwcl,ljlrcc,ljjhcc,rjccl891,rjcxl891,rjtpl891,rjccl895,rjcxl895,rjtpl895,ljsxts,online,zyzl,remark1,remark2,remark3,remark4,remark5,qdlr,qdlrz,ljqdlr,ljqdlrz,qdlrzl,ljqdlrzl,percltime,zyccl from t_hn_detail_ls where time='"+idate+"'";
 //			session.createSQLQuery(sql).executeUpdate();
@@ -998,7 +1012,6 @@ public class Internal {
 			trans.rollback();//出错回滚
 			e.printStackTrace();
 		}finally{
-			
 			trans.commit();
 			session.flush();
 			session.clear();

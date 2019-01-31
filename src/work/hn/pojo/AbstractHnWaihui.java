@@ -27,6 +27,8 @@ public abstract class AbstractHnWaihui  implements java.io.Serializable {
      private Integer pjcs;
      private Integer pjfs;
      private Integer sbyy;
+     private Integer dgcs;
+     private Integer dgfs;
      private Integer hrcs;
      private Integer hrfs;
      private Double xlzycs;
@@ -38,6 +40,8 @@ public abstract class AbstractHnWaihui  implements java.io.Serializable {
      private Double xlpjcs;
      private Double xlpjfs;
      private Double xlsbyy;
+     private Double xldgcs;
+     private Double xldgfs;
      private Double xlhrcs;
      private Double xlhrfs;
      private Integer lrcc;
@@ -65,7 +69,7 @@ public abstract class AbstractHnWaihui  implements java.io.Serializable {
 
     
     /** full constructor */
-    public AbstractHnWaihui(String date, String no, String name, Integer zx, Integer xz, Integer zycs, Integer zyfs, Integer lrxg, Integer lrsq, Integer jhxg, Integer jhsq, Integer pjcs, Integer pjfs, Integer sbyy, Integer hrcs, Integer hrfs, Double xlzycs, Double xlzyfs, Double xllrxg, Double xllrsq, Double xljhxg, Double xljhsq, Double xlpjcs, Double xlpjfs, Double xlsbyy, Double xlhrcs, Double xlhrfs, Integer lrcc, Double lclv, Integer jhcc, Double jclv, Integer tp, Double tplv, Integer cx, Double cxlv, Double zhcl, Integer ywl, Double sumxl, Double ccl, Double percl, Integer bh, Double bhl) {
+    public AbstractHnWaihui(String date, String no, String name, Integer zx, Integer xz, Integer zycs, Integer zyfs, Integer lrxg, Integer lrsq, Integer jhxg, Integer jhsq, Integer pjcs, Integer pjfs, Integer sbyy, Integer dgcs, Integer dgfs, Integer hrcs, Integer hrfs, Double xlzycs, Double xlzyfs, Double xllrxg, Double xllrsq, Double xljhxg, Double xljhsq, Double xlpjcs, Double xlpjfs, Double xlsbyy, Double xldgcs, Double xldgfs, Double xlhrcs, Double xlhrfs, Integer lrcc, Double lclv, Integer jhcc, Double jclv, Integer tp, Double tplv, Integer cx, Double cxlv, Double zhcl, Integer ywl, Double sumxl, Double ccl, Double percl, Integer bh, Double bhl) {
         this.date = date;
         this.no = no;
         this.name = name;
@@ -80,6 +84,8 @@ public abstract class AbstractHnWaihui  implements java.io.Serializable {
         this.pjcs = pjcs;
         this.pjfs = pjfs;
         this.sbyy = sbyy;
+        this.dgcs = dgcs;
+        this.dgfs = dgfs;
         this.hrcs = hrcs;
         this.hrfs = hrfs;
         this.xlzycs = xlzycs;
@@ -91,6 +97,8 @@ public abstract class AbstractHnWaihui  implements java.io.Serializable {
         this.xlpjcs = xlpjcs;
         this.xlpjfs = xlpjfs;
         this.xlsbyy = xlsbyy;
+        this.xldgcs = xldgcs;
+        this.xldgfs = xldgfs;
         this.xlhrcs = xlhrcs;
         this.xlhrfs = xlhrfs;
         this.lrcc = lrcc;
@@ -233,6 +241,22 @@ public abstract class AbstractHnWaihui  implements java.io.Serializable {
         this.sbyy = sbyy;
     }
 
+    public Integer getDgcs() {
+        return this.dgcs;
+    }
+    
+    public void setDgcs(Integer dgcs) {
+        this.dgcs = dgcs;
+    }
+
+    public Integer getDgfs() {
+        return this.dgfs;
+    }
+    
+    public void setDgfs(Integer dgfs) {
+        this.dgfs = dgfs;
+    }
+
     public Integer getHrcs() {
         return this.hrcs;
     }
@@ -319,6 +343,22 @@ public abstract class AbstractHnWaihui  implements java.io.Serializable {
     
     public void setXlsbyy(Double xlsbyy) {
         this.xlsbyy = xlsbyy;
+    }
+
+    public Double getXldgcs() {
+        return this.xldgcs;
+    }
+    
+    public void setXldgcs(Double xldgcs) {
+        this.xldgcs = xldgcs;
+    }
+
+    public Double getXldgfs() {
+        return this.xldgfs;
+    }
+    
+    public void setXldgfs(Double xldgfs) {
+        this.xldgfs = xldgfs;
     }
 
     public Double getXlhrcs() {

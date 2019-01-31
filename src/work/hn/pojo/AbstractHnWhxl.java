@@ -38,6 +38,9 @@ public abstract class AbstractHnWhxl  implements java.io.Serializable {
      private Double cslr895;
      private Double zyfs895;
      private Double pjsh895;
+     private Double rlcs895;
+     private Double rlfs895;
+     private Double rlsb895;
      private Double pctwh;
      private Double zycswh;
      private Double zyfswh;
@@ -48,11 +51,20 @@ public abstract class AbstractHnWhxl  implements java.io.Serializable {
      private Double pjcswh;
      private Double pjfswh;
      private Double sbyywh;
+     private Double dghccswh;
+     private Double dghcfswh;
+     private Double dghrcswh;
+     private Double dghrfswh;
      private Double pctjy;
      private Double pjcsjy;
      private Double pjfsjy;
      private Double lrxgjy;
      private Double lrsqjy;
+     private Double jhxgjy;
+     private Double jhsqjy;
+     private Double sbyyjy;
+     private Double cslrjy;
+     private Double zyfsjy;
 
 
     // Constructors
@@ -63,7 +75,7 @@ public abstract class AbstractHnWhxl  implements java.io.Serializable {
 
     
     /** full constructor */
-    public AbstractHnWhxl(String date, String name, String no, Double pct, Double pctrmb, Double bmsb891, Double yxcf891, Double lrxg891, Double lrsq891, Double jhxg891, Double jhsq891, Double sbyy891, Double yxbz891, Double cslr891, Double zyfs891, Double bmsb895, Double yxcf895, Double lrxg895, Double lrsq895, Double jhxg895, Double jhsq895, Double sbyy895, Double cslr895, Double zyfs895, Double pjsh895, Double pctwh, Double zycswh, Double zyfswh, Double lrxgwh, Double lrsqwh, Double jhxgwh, Double jhsqwh, Double pjcswh, Double pjfswh, Double sbyywh, Double pctjy, Double pjcsjy, Double pjfsjy, Double lrxgjy, Double lrsqjy) {
+    public AbstractHnWhxl(String date, String name, String no, Double pct, Double pctrmb, Double bmsb891, Double yxcf891, Double lrxg891, Double lrsq891, Double jhxg891, Double jhsq891, Double sbyy891, Double yxbz891, Double cslr891, Double zyfs891, Double bmsb895, Double yxcf895, Double lrxg895, Double lrsq895, Double jhxg895, Double jhsq895, Double sbyy895, Double cslr895, Double zyfs895, Double pjsh895, Double rlcs895, Double rlfs895, Double rlsb895, Double pctwh, Double zycswh, Double zyfswh, Double lrxgwh, Double lrsqwh, Double jhxgwh, Double jhsqwh, Double pjcswh, Double pjfswh, Double sbyywh, Double dghccswh, Double dghcfswh, Double dghrcswh, Double dghrfswh, Double pctjy, Double pjcsjy, Double pjfsjy, Double lrxgjy, Double lrsqjy, Double jhxgjy, Double jhsqjy, Double sbyyjy, Double cslrjy, Double zyfsjy) {
         this.date = date;
         this.name = name;
         this.no = no;
@@ -89,6 +101,9 @@ public abstract class AbstractHnWhxl  implements java.io.Serializable {
         this.cslr895 = cslr895;
         this.zyfs895 = zyfs895;
         this.pjsh895 = pjsh895;
+        this.rlcs895 = rlcs895;
+        this.rlfs895 = rlfs895;
+        this.rlsb895 = rlsb895;
         this.pctwh = pctwh;
         this.zycswh = zycswh;
         this.zyfswh = zyfswh;
@@ -99,11 +114,20 @@ public abstract class AbstractHnWhxl  implements java.io.Serializable {
         this.pjcswh = pjcswh;
         this.pjfswh = pjfswh;
         this.sbyywh = sbyywh;
+        this.dghccswh = dghccswh;
+        this.dghcfswh = dghcfswh;
+        this.dghrcswh = dghrcswh;
+        this.dghrfswh = dghrfswh;
         this.pctjy = pctjy;
         this.pjcsjy = pjcsjy;
         this.pjfsjy = pjfsjy;
         this.lrxgjy = lrxgjy;
         this.lrsqjy = lrsqjy;
+        this.jhxgjy = jhxgjy;
+        this.jhsqjy = jhsqjy;
+        this.sbyyjy = sbyyjy;
+        this.cslrjy = cslrjy;
+        this.zyfsjy = zyfsjy;
     }
 
    
@@ -317,6 +341,30 @@ public abstract class AbstractHnWhxl  implements java.io.Serializable {
         this.pjsh895 = pjsh895;
     }
 
+    public Double getRlcs895() {
+        return this.rlcs895;
+    }
+    
+    public void setRlcs895(Double rlcs895) {
+        this.rlcs895 = rlcs895;
+    }
+
+    public Double getRlfs895() {
+        return this.rlfs895;
+    }
+    
+    public void setRlfs895(Double rlfs895) {
+        this.rlfs895 = rlfs895;
+    }
+
+    public Double getRlsb895() {
+        return this.rlsb895;
+    }
+    
+    public void setRlsb895(Double rlsb895) {
+        this.rlsb895 = rlsb895;
+    }
+
     public Double getPctwh() {
         return this.pctwh;
     }
@@ -397,6 +445,38 @@ public abstract class AbstractHnWhxl  implements java.io.Serializable {
         this.sbyywh = sbyywh;
     }
 
+    public Double getDghccswh() {
+        return this.dghccswh;
+    }
+    
+    public void setDghccswh(Double dghccswh) {
+        this.dghccswh = dghccswh;
+    }
+
+    public Double getDghcfswh() {
+        return this.dghcfswh;
+    }
+    
+    public void setDghcfswh(Double dghcfswh) {
+        this.dghcfswh = dghcfswh;
+    }
+
+    public Double getDghrcswh() {
+        return this.dghrcswh;
+    }
+    
+    public void setDghrcswh(Double dghrcswh) {
+        this.dghrcswh = dghrcswh;
+    }
+
+    public Double getDghrfswh() {
+        return this.dghrfswh;
+    }
+    
+    public void setDghrfswh(Double dghrfswh) {
+        this.dghrfswh = dghrfswh;
+    }
+
     public Double getPctjy() {
         return this.pctjy;
     }
@@ -435,6 +515,46 @@ public abstract class AbstractHnWhxl  implements java.io.Serializable {
     
     public void setLrsqjy(Double lrsqjy) {
         this.lrsqjy = lrsqjy;
+    }
+
+    public Double getJhxgjy() {
+        return this.jhxgjy;
+    }
+    
+    public void setJhxgjy(Double jhxgjy) {
+        this.jhxgjy = jhxgjy;
+    }
+
+    public Double getJhsqjy() {
+        return this.jhsqjy;
+    }
+    
+    public void setJhsqjy(Double jhsqjy) {
+        this.jhsqjy = jhsqjy;
+    }
+
+    public Double getSbyyjy() {
+        return this.sbyyjy;
+    }
+    
+    public void setSbyyjy(Double sbyyjy) {
+        this.sbyyjy = sbyyjy;
+    }
+
+    public Double getCslrjy() {
+        return this.cslrjy;
+    }
+    
+    public void setCslrjy(Double cslrjy) {
+        this.cslrjy = cslrjy;
+    }
+
+    public Double getZyfsjy() {
+        return this.zyfsjy;
+    }
+    
+    public void setZyfsjy(Double zyfsjy) {
+        this.zyfsjy = zyfsjy;
     }
    
 

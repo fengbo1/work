@@ -73,8 +73,8 @@ public class ImportFxq {
 			workbook = uu.getWorkbook(realpath+fileFileName);
 			Sheet sheet = workbook.getSheetAt(0);
 			nn = sheet.getLastRowNum()+1;
-			sql = "truncate t_fxq_config";
-			session.createSQLQuery(sql).executeUpdate();
+//			sql = "truncate t_fxq_config";
+//			session.createSQLQuery(sql).executeUpdate();
 			for (int i = 1; i < nn; i++) {
 				FxqConfig fc = new FxqConfig();
 				Row currentRow = sheet.getRow(i);// 当前行

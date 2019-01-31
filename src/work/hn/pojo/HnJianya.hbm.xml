@@ -46,6 +46,12 @@
         <property name="sbyy" type="java.lang.Integer">
             <column name="sbyy" />
         </property>
+        <property name="cslr" type="java.lang.Integer">
+            <column name="cslr" />
+        </property>
+        <property name="zyfs" type="java.lang.Integer">
+            <column name="zyfs" />
+        </property>
         <property name="xllrxg" type="java.lang.Double">
             <column name="xllrxg" precision="22" scale="0" />
         </property>
@@ -66,6 +72,12 @@
         </property>
         <property name="xlsbyy" type="java.lang.Double">
             <column name="xlsbyy" precision="22" scale="0" />
+        </property>
+        <property name="xlcslr" type="java.lang.Double">
+            <column name="xlcslr" precision="22" scale="0" />
+        </property>
+        <property name="xlzyfs" type="java.lang.Double">
+            <column name="xlzyfs" precision="22" scale="0" />
         </property>
         <property name="lrcc" type="java.lang.Integer">
             <column name="lrcc" />

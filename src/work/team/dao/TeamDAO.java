@@ -540,7 +540,7 @@ public class TeamDAO extends BaseHibernateDAO  {
 				"CAST(sum(xljh_fz)/sum(xljh_fm) AS DECIMAL(18,2))," +
 				"CAST(sum(xlsh_fz)/sum(xlsh_fm) AS DECIMAL(18,2))," +
 				"CAST(sum(xljy_fz)/sum(xljy_fm) AS DECIMAL(18,2)),0.0,0.0,0.0,0.0,0.0,0.0," +
-				"'0','0','0' from t_hn_new where date='"+idate+"' and zx=0 and xz=0 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B')";
+				"'0','0','0' from t_hn_new where date='"+idate+"' and zx=0 and xz!=3 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B')";
 				session.createSQLQuery(sql).executeUpdate();
 				
 				sql = "insert into t_hn_team_t(time,chu,team,cl,clrmb,clwh,cljh," +
@@ -566,7 +566,7 @@ public class TeamDAO extends BaseHibernateDAO  {
 				"CAST(sum(xljh_fz)/sum(xljh_fm) AS DECIMAL(18,2))," +
 				"CAST(sum(xlsh_fz)/sum(xlsh_fm) AS DECIMAL(18,2))," +
 				"CAST(sum(xljy_fz)/sum(xljy_fm) AS DECIMAL(18,2)),0.0,0.0,0.0,0.0,0.0,0.0," +
-				"'0','0','0' from t_hn_new where date='"+idate+"' and zx=0 and xz=0 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B') group by mid(pos,5,1)";
+				"'0','0','0' from t_hn_new where date='"+idate+"' and zx=0 and xz!=3 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B') group by mid(pos,5,1)";
 				session.createSQLQuery(sql).executeUpdate();
 					
 				sql = "insert into t_hn_team_temp(time,chu,team,rjcl," +
@@ -578,7 +578,7 @@ public class TeamDAO extends BaseHibernateDAO  {
 				"CAST(sum(clsh)/sum(sxsh) AS DECIMAL(18,0))," +
 				"CAST(sum(cljy)/sum(sxjy) AS DECIMAL(18,0))," +
 				"CAST(sum(clfxq)/sum(sxfxq) AS DECIMAL(18,0))" +
-				" from t_hn_new where date>='"+bdate+"' and date<='"+idate+"' and zx=0 and xz=0 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B')";	
+				" from t_hn_new where date>='"+bdate+"' and date<='"+idate+"' and zx=0 and xz!=3 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B')";	
 				session.createSQLQuery(sql).executeUpdate();
 				
 				sql = "insert into t_hn_team_temp(time,chu,team,rjcl," +
@@ -590,7 +590,7 @@ public class TeamDAO extends BaseHibernateDAO  {
 				"CAST(sum(clsh)/sum(sxsh) AS DECIMAL(18,0))," +
 				"CAST(sum(cljy)/sum(sxjy) AS DECIMAL(18,0))," +
 				"CAST(sum(clfxq)/sum(sxfxq) AS DECIMAL(18,0))" +
-				" from t_hn_new where date>='"+bdate+"' and date<='"+idate+"' and zx=0 and xz=0 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B') group by mid(pos,5,1)";	
+				" from t_hn_new where date>='"+bdate+"' and date<='"+idate+"' and zx=0 and xz!=3 and pos like '__"+i+"__' and mid(pos,5,1) in ('1','2','3','4','5','6','7','8','9','A','B') group by mid(pos,5,1)";	
 				session.createSQLQuery(sql).executeUpdate();
 					
 			}

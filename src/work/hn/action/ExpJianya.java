@@ -59,8 +59,9 @@ public class ExpJianya {
 		ExportExcel<HnJianyaBean> ex = new ExportExcel<HnJianyaBean>();
 		String[] headers = { "序号","日期","工号","姓名", "中心","录入修改",
 				"录入授权","检核修改","检核授权","票据初审","票据复审",
-				"失败原因","录入修改效率","录入授权效率","检核修改效率",
-				"检核授权效率","票据初审效率","票据复审效率","失败原因效率",
+				"失败原因","初审录入","专业复审","录入修改效率","录入授权效率",
+				"检核修改效率","检核授权效率","票据初审效率","票据复审效率",
+				"失败原因效率","初审录入效率","专业复审效率",
 				"录入差错","录入差错率","检核差错","检核差错率","退票","退票率",
 				"查询","查询率","折合产量"
 		};
@@ -121,6 +122,8 @@ public class ExpJianya {
 				hde.setPjcs(String.valueOf(hd.getPjcs()));
 				hde.setPjfs(String.valueOf(hd.getPjfs()));
 				hde.setSbyy(String.valueOf(hd.getSbyy()));
+				hde.setCslr(String.valueOf(hd.getCslr()));
+				hde.setZyfs(String.valueOf(hd.getZyfs()));
 				
 				hde.setXllrxg(String.valueOf(hd.getXllrxg()));
 				hde.setXllrsq(String.valueOf(hd.getXllrsq()));
@@ -129,6 +132,8 @@ public class ExpJianya {
 				hde.setXlpjcs(String.valueOf(hd.getXlpjcs()));
 				hde.setXlpjfs(String.valueOf(hd.getXlpjfs()));
 				hde.setXlsbyy(String.valueOf(hd.getXlsbyy()));
+				hde.setXlcslr(String.valueOf(hd.getXlcslr()));
+				hde.setXlzyfs(String.valueOf(hd.getXlzyfs()));
 				
 				hde.setLrcc(String.valueOf(hd.getLrcc()));
 				hde.setLclv(Tld.DoubleDownloadNew(hd.getLrxg(),hd.getLclv()));

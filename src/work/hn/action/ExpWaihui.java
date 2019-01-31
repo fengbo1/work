@@ -58,11 +58,13 @@ public class ExpWaihui {
 		String result="success";
 		String time = begindate.replace("-", "");
 		ExportExcel<HnWaihuiBean> ex = new ExportExcel<HnWaihuiBean>();
-		String[] headers = { "序号","日期","工号","姓名", "中心", "业务初审",
-				"业务复审","录入修改","录入授权","检核修改","检核授权","票据初审","票据复审",
-				"失败原因","业务初审效率","业务复审效率","录入修改效率","录入授权效率",
-				"检核修改效率","检核授权效率","票据初审效率","票据复审效率","失败原因效率",
-				"录入差错","录入差错率","检核差错","检核差错率","退票","退票率","查询","查询率",
+		String[] headers = { "序号","日期","工号","姓名", "中心", "对私专业初审",
+				"对私专业复审","录入修改","录入授权","检核修改","检核授权","票据初审","票据复审",
+				"失败原因","对公汇出初审","对公汇出复审","汇入初审","汇入复审","对私专业初审效率",
+				"对私专业复审效率","录入修改效率","录入授权效率","检核修改效率","检核授权效率",
+				"票据初审效率","票据复审效率","失败原因效率","对公汇出初审效率","对公汇出复审效率",
+				"汇入初审效率","汇入复审效率","录入差错","录入差错率","检核差错","检核差错率","退票",
+				"退票率","查询","查询率",
 				"业务笔数","差错率","单位产能作业时间","有效作业时长","驳回量","驳回率","折合产量"
 		};
 		List<HnWaihuiBean> dataset = findData(begindate.replace("-", ""),enddate.replace("-", ""));
@@ -124,6 +126,10 @@ public class ExpWaihui {
 				hde.setPjcs(String.valueOf(hd.getPjcs()));
 				hde.setPjfs(String.valueOf(hd.getPjfs()));
 				hde.setSbyy(String.valueOf(hd.getSbyy()));
+				hde.setDgcs(String.valueOf(hd.getDgcs()));
+				hde.setDgfs(String.valueOf(hd.getDgfs()));
+				hde.setHrcs(String.valueOf(hd.getHrcs()));
+				hde.setHrfs(String.valueOf(hd.getHrfs()));
 				
 				hde.setXlzycs(String.valueOf(hd.getXlzycs()));
 				hde.setXlzyfs(String.valueOf(hd.getXlzyfs()));
@@ -134,6 +140,10 @@ public class ExpWaihui {
 				hde.setXlpjcs(String.valueOf(hd.getXlpjcs()));
 				hde.setXlpjfs(String.valueOf(hd.getXlpjfs()));
 				hde.setXlsbyy(String.valueOf(hd.getXlsbyy()));
+				hde.setXldgcs(String.valueOf(hd.getXldgcs()));
+				hde.setXldgfs(String.valueOf(hd.getXldgfs()));
+				hde.setXlhrcs(String.valueOf(hd.getXlhrcs()));
+				hde.setXlhrfs(String.valueOf(hd.getXlhrfs()));
 				
 				hde.setLrcc(String.valueOf(hd.getLrcc()));
 				hde.setLclv(Tld.DoubleDownloadNew(hd.getLrxg(),hd.getLclv()));

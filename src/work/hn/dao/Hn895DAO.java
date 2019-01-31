@@ -2,8 +2,6 @@ package work.hn.dao;
 // default package
 
 import ccb.dao.BaseHibernateDAO;
-import ccb.hibernate.HibernateSessionFactory;
-
 import java.util.List;
 import org.hibernate.LockMode;
 import org.hibernate.Query;
@@ -56,6 +54,10 @@ public class Hn895DAO extends BaseHibernateDAO  {
 	public static final String XL_RLFS = "xlRlfs";
 	public static final String RLSB = "rlsb";
 	public static final String XL_RLSB = "xlRlsb";
+	public static final String KDFH = "kdfh";
+	public static final String XL_KDFH = "xlKdfh";
+	public static final String FYHD = "fyhd";
+	public static final String XL_FYHD = "xlFyhd";
 	public static final String LRCC = "lrcc";
 	public static final String JHCC = "jhcc";
 	public static final String LRCCL = "lrccl";
@@ -325,6 +327,30 @@ public class Hn895DAO extends BaseHibernateDAO  {
 		);
 	}
 	
+	public List findByKdfh(Object kdfh
+	) {
+		return findByProperty(KDFH, kdfh
+		);
+	}
+	
+	public List findByXlKdfh(Object xlKdfh
+	) {
+		return findByProperty(XL_KDFH, xlKdfh
+		);
+	}
+	
+	public List findByFyhd(Object fyhd
+	) {
+		return findByProperty(FYHD, fyhd
+		);
+	}
+	
+	public List findByXlFyhd(Object xlFyhd
+	) {
+		return findByProperty(XL_FYHD, xlFyhd
+		);
+	}
+	
 	public List findByLrcc(Object lrcc
 	) {
 		return findByProperty(LRCC, lrcc
@@ -456,6 +482,7 @@ public class Hn895DAO extends BaseHibernateDAO  {
             throw re;
         }
     }
+    
     public List<Hn895> findBykey(String time,int xz,int zx,String key,int sequence)
     {
     	log.info("find Hn895 by date desc");

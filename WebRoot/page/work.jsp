@@ -451,7 +451,9 @@ $(document).ready(function(){
 											<li class="frame" onclick="frame('rc_rule_ty')">通用业务-人民币</li>
 											<li class="frame" onclick="frame('rc_rule_wh')">通用业务-外汇</li>
 											<li class="frame" onclick="frame('rc_rule_jy')">通用业务-建亚</li>
+											<c:if test="${chu=='2'||zhi=='0'}">
 											<li class="frame" onclick="frame('rc_rule_hg')">合规业务</li>
+											</c:if>
 											<li class="frame" onclick="frame('rc_rule_zl')">辅助资料</li>
 											<li class="frame" onclick="frame('rc_rule_gx')">近期更新</li>
 										</ul>

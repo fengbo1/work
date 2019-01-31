@@ -630,18 +630,26 @@ public class ProduceSummary
 		summary_rmb.setItemName("1 人民币");
 		
 		/*武汉中心*/
-		summary_rmb.setWh891(summary_bm.getWh891()+summary_cf.getWh891()+summary_lrxg.getWh891()+summary_lrsq.getWh891()
-				+summary_jhxg.getWh891()+summary_jhsq.getWh891()+summary_sbyy.getWh891()+summary_yxbz.getWh891()
-				+summary_cslr.getWh891()+summary_zyfs.getWh891());
-		summary_rmb.setWh895(summary_bm.getWh895()+summary_cf.getWh895()+summary_lrxg.getWh895()+summary_lrsq.getWh895()
-				+summary_jhxg.getWh895()+summary_jhsq.getWh895()+summary_sbyy.getWh895());
+		sql="where time='"+date+"' and zx='1' " ;
+		summary_rmb.setWh891(dao.countCDouble("ywl","hn891",sql));
+		sql="where time='"+date+"' and zx='1' " ;
+		summary_rmb.setWh895(dao.countCDouble("ywl","hn895",sql));
+//		summary_rmb.setWh891(summary_bm.getWh891()+summary_cf.getWh891()+summary_lrxg.getWh891()+summary_lrsq.getWh891()
+//				+summary_jhxg.getWh891()+summary_jhsq.getWh891()+summary_sbyy.getWh891()+summary_yxbz.getWh891()
+//				+summary_cslr.getWh891()+summary_zyfs.getWh891());
+//		summary_rmb.setWh895(summary_bm.getWh895()+summary_cf.getWh895()+summary_lrxg.getWh895()+summary_lrsq.getWh895()
+//				+summary_jhxg.getWh895()+summary_jhsq.getWh895()+summary_sbyy.getWh895());
 		summary_rmb.setWhReal(check.DoubleTo0(summary_rmb.getWh891()+summary_rmb.getWh895()));
 		/*成都中心*/
-		summary_rmb.setCd891(summary_bm.getCd891()+summary_cf.getCd891()+summary_lrxg.getCd891()+summary_lrsq.getCd891()
-				+summary_jhxg.getCd891()+summary_jhsq.getCd891()+summary_sbyy.getCd891()+summary_yxbz.getCd891()
-				+summary_cslr.getCd891()+summary_zyfs.getCd891());
-		summary_rmb.setCd895(summary_bm.getCd895()+summary_cf.getCd895()+summary_lrxg.getCd895()+summary_lrsq.getCd895()
-				+summary_jhxg.getCd895()+summary_jhsq.getCd895()+summary_sbyy.getCd895());
+		sql="where time='"+date+"' and zx='1' " ;
+		summary_rmb.setWh891(dao.countCDouble("ywl","hn891",sql));
+		sql="where time='"+date+"' and zx='1' " ;
+		summary_rmb.setWh895(dao.countCDouble("ywl","hn895",sql));
+//		summary_rmb.setCd891(summary_bm.getCd891()+summary_cf.getCd891()+summary_lrxg.getCd891()+summary_lrsq.getCd891()
+//				+summary_jhxg.getCd891()+summary_jhsq.getCd891()+summary_sbyy.getCd891()+summary_yxbz.getCd891()
+//				+summary_cslr.getCd891()+summary_zyfs.getCd891());
+//		summary_rmb.setCd895(summary_bm.getCd895()+summary_cf.getCd895()+summary_lrxg.getCd895()+summary_lrsq.getCd895()
+//				+summary_jhxg.getCd895()+summary_jhsq.getCd895()+summary_sbyy.getCd895());
 		summary_rmb.setCdReal(check.DoubleTo0(summary_rmb.getCd891()+summary_rmb.getCd895()));
 		/*合计*/
 		summary_rmb.setTotal891(summary_rmb.getCd891()+summary_rmb.getWh891());

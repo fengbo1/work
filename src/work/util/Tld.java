@@ -8,8 +8,10 @@ public class Tld {
 	/**
 	 * 路径
 	 */
-	public static final String path = "C:/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/work/" ;
-	//public static final String path ="D:/Program Files/Apache Software Foundation/apache-tomcat-7.0.59/webapps/work/";
+//	public static final String path = "C:/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/work/" ;
+//	public static final String uploadpath = "D:/import/work/";
+	public static final String uploadpath = "C:/import/work/";
+	public static final String path ="C:/Program Files/apache-tomcat-7.0.59/webapps/work/";
 	public static final String chars26 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	/**
 	 * 下载路径
@@ -32,7 +34,7 @@ public class Tld {
 	//public static final String imagepath ="http://192.168.1.162:8080/work/rulecase/rule/image/";
 	
 	public static final String[] RMB_ZW={"人工版面识别","人工影像拆分","录入修改","录入修改授权","检核修改","检核修改授权","记账失败人工异常处理","单位账户影像标注录入角色","初审录入","专业复审"};
-	public static final String[] RMB_FZW={"人工版面识别","人工影像拆分","录入修改","录入修改授权","检核修改","检核修改授权","记账失败人工异常处理","初审录入","专业复审","商户签约资料审核","商户签约发布失败处理","人力资源初审","人力资源复审","人力资源失败原因分析"};//增加7个环节
+	public static final String[] RMB_FZW={"人工版面识别","人工影像拆分","录入修改","录入修改授权","检核修改","检核修改授权","记账失败人工异常处理","初审录入","专业复审","商户签约资料审核","商户签约发布失败处理","人力资源初审","人力资源复审","人力资源失败原因分析","小微快贷复核","房源总行核对"};//增加9个环节
 	public static final String[] WAIHUI={"外汇业务初审","外汇业务复审","录入修改","录入修改授权","检核修改","检核修改授权","记账失败人工异常处理","外汇票据初审","外汇票据复审","外汇汇入初审","外汇汇入复审"};//增加3个环节
 	public static final String[] JIANYA={"录入修改","录入修改授权","检核修改","检核修改授权","海外票据初审","海外票据复审","记账失败人工异常处理","初审录入","专业复审"};//增加2个环节
 	public static final String[] FXQ={};
@@ -819,7 +821,7 @@ public class Tld {
 		{
 			return -1;
 		}
-		else if(xz.compareTo("0")>0&&xz.compareTo("9")<0)
+		else if(xz.compareTo("0")>=0&&xz.compareTo("9")<0)
 		{
 			return Integer.valueOf(xz);
 		}
