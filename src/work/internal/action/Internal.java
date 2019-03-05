@@ -975,7 +975,7 @@ public class Internal {
 			session.createSQLQuery(sql).executeUpdate();
 			sql = "update t_hn_waihui_ls set sumxl=(zycs*xlzycs+zyfs*xlzyfs+lrxg*xllrxg+lrsq*xllrsq+jhxg*xljhxg+jhsq*xljhsq+pjcs*xlpjcs+pjfs*xlpjfs+sbyy*xlsbyy+dgcs*xldgcs+dgfs*xldgfs+hrcs*xlhrcs+hrfs*xlhrfs),cx=CAST(cxlv*ywl AS DECIMAL(18,0)) where date='"+idate+"'";
 			session.createSQLQuery(sql).executeUpdate();
-			sql = "update t_hn_waihui_ls set percl=CAST(sumxl/zhcl AS DECIMAL(18,2)),bhl=CAST(bh/zyfs AS DECIMAL(18,4))";
+			sql = "update t_hn_waihui_ls set percl=CAST(sumxl/zhcl AS DECIMAL(18,2)),bhl=CAST(bh/(zycs+dgcs+hrcs) AS DECIMAL(18,4))";
 			session.createSQLQuery(sql).executeUpdate();
 			
 			//t_hn_detail

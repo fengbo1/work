@@ -78,7 +78,7 @@ public class ImportNo {
 		NoLogDAO nldao = new NoLogDAO();
 		YearSeason ys = new YearSeason();
     	int nn=0;
-		String realpath = "D:/import/work/";
+		String realpath = Tld.uploadpath;
 		if ((file != null)&&(fileFileName.length()>0)) {
 			File savefile = new File(new File(realpath), fileFileName);
 			if (!savefile.getParentFile().exists())

@@ -107,6 +107,11 @@ public class YearSeason {
 	{
 		return String.valueOf(getIntegerDate());
 	}
+	public String getStdStringDate()
+	{
+		String dt = getStringDate();
+		return dt.substring(0, 4)+"-"+dt.substring(4, 6)+"-"+dt.substring(6, 8);
+	}
 	public String getThisMonth()
 	{
 		return String.valueOf(year*100+month);

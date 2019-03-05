@@ -6,6 +6,7 @@ import ccb.hibernate.HibernateSessionFactory;
 public class Mgopset {
 
 	private String mngop;
+	private String delmngop;
 	private String message;
 	public String getMngop() {
 		return mngop;
@@ -13,7 +14,13 @@ public class Mgopset {
 	public void setMngop(String mngop) {
 		this.mngop = mngop;
 	}
-public String getMessage() {
+	public String getDelmngop() {
+		return delmngop;
+	}
+	public void setDelmngop(String delmngop) {
+		this.delmngop = delmngop;
+	}
+	public String getMessage() {
 		return message;
 	}
 	public void setMessage(String message) {
@@ -26,7 +33,7 @@ public String execute() throws Exception{
 		Session session = HibernateSessionFactory.getSession();
 		Transaction trans = session.beginTransaction();
 		try {
-			sql = "update t_no set role='0' where role='11'";
+			sql = "update t_no set role='0' where name='"+delmngop+"' and zx='0' and xz!='3'";
 			session.createSQLQuery(sql).executeUpdate();
 			sql = "update t_no set role='11' where name='"+mngop+"' and zx='0' and xz!='3'";
 			session.createSQLQuery(sql).executeUpdate();

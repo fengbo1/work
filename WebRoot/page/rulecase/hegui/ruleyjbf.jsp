@@ -70,7 +70,7 @@ highlight();
 	}
 	function importhg()
 	{
-		window.open("<%=path%>/ruletoadd.action?plate="+plate,"","height=700,width=950,top=100,left=290,scrollbars=yes,resizable=yes");
+		window.open("<%=path%>/page/rulecase/hegui/rulehgimport.jsp","","height=700,width=950,top=100,left=290,scrollbars=yes,resizable=yes");
 	}
 	function highlight()
 	 {
@@ -104,11 +104,11 @@ highlight();
  <link href="<%=path%>/css/table_back.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-  
+ 		<form action="<%=path%>/rulehg.action" method="post">
 			<table align="center" style="width: 1200px;height:500px">
 			<tr>
 			<td>
-			<form action="<%=path%>/rulehg.action" method="post">
+			
 			<table  height="80" align="center" cellpadding="0" cellspacing="2">
 				<tr class="qq">
 					<td
@@ -237,7 +237,7 @@ highlight();
 					</td>
 				</tr>
 			</table>
-			</form>
+			
 			</td>
 			</tr>
 			<tr>
@@ -326,6 +326,8 @@ highlight();
 							<a	href="<%=path%>/rulehg.action?zhuan=1&pool=${pool}&bz=${bz}&factor=${factor}&word=${word}&currentPage=${nextPage}"
 							style="padding-right: 30px;color: #104E8B">下一页</a> 	
 									共有 ${totalRows} 条记录
+							第<input style="width:30px" type="text" name="currentPage"/>页
+								<input type="submit" value="跳转"/>			
 								</div></td>
 							<td colspan="3">
 								<div align="center">
@@ -341,5 +343,6 @@ highlight();
 			</td>
 			</tr>	
 			</table>
+		</form>	
 	</body>
 </html>

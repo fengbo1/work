@@ -25,6 +25,7 @@ import work.rulecase.dao.RcRuleDAO;
 import work.rulecase.pojo.RcCase;
 import work.rulecase.pojo.RcRule;
 import work.util.GeneralCheck;
+import work.util.Tld;
 import work.util.UploadUtil;
 import work.util.YearSeason;
 import ccb.hibernate.HibernateSessionFactory;
@@ -63,7 +64,7 @@ public class ImportJihe {
 		int nn=0;
 		String sql = "";
 		JiheConfigDAO jcdao = new JiheConfigDAO();
-		String realpath = "D:/import/work/";
+		String realpath = Tld.uploadpath;
 		message = "导入成功";
 		Workbook workbook = null;
 		UploadUtil uu = new UploadUtil();

@@ -15,6 +15,7 @@ import work.control.dao.JiheConfigDAO;
 import work.control.pojo.FxqConfig;
 import work.control.pojo.JiheConfig;
 import work.rulecase.action.RuleImport;
+import work.util.Tld;
 import work.util.UploadUtil;
 import ccb.hibernate.HibernateSessionFactory;
 
@@ -54,7 +55,7 @@ public class ImportFxq {
 		int nn=0;
 		String sql = "";
 		FxqConfigDAO fcdao = new FxqConfigDAO();
-		String realpath = "D:/import/work/";
+		String realpath = Tld.uploadpath;
 		message = "导入成功";
 		Workbook workbook = null;
 		UploadUtil uu = new UploadUtil();

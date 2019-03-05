@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import work.rulecase.pojo.RcRule;
 import work.rulecase.pojo.RuleHgBean;
+import work.util.YearSeason;
 import ccb.hibernate.HibernateSessionFactory;
 
 public class HeGuiAction {
@@ -126,8 +127,11 @@ public class HeGuiAction {
 	}
 public String execute() throws Exception{
 		HeGuiCode hgc = new HeGuiCode();
+		YearSeason ys = new YearSeason();
+		String sql = "";
 		if(word!=null&&zhuan==1)
 		{
+			factor = new String(factor.getBytes("ISO8859-1"),"UTF-8");
 			word = new String(word.getBytes("ISO8859-1"),"UTF-8");
 		}
 		if(pool==null)
@@ -143,9 +147,12 @@ public String execute() throws Exception{
 			bz="1";
 		}
 		list = new ArrayList<RuleHgBean>();
-		String sql = "select distinct(factor) from t_rc_rule where plate='合规业务' and pool='"+pool+"' order by pool";
 		Session session = HibernateSessionFactory.getSession();
 		Transaction trans = session.beginTransaction();
+		sql = "update t_rc_rule set fac_a='0' where fac_c!='' and length(fac_c)=10 and fac_c<'"+ys.getStdStringDate()+"'";
+		session.createSQLQuery(sql).executeUpdate();
+		
+		sql = "select distinct(factor) from t_rc_rule where plate='合规业务' and pool='"+pool+"' order by pool";
 		if(pool.equals("1"))//审核标准
 		{
 			listfac = new ArrayList<String>();
@@ -167,7 +174,15 @@ public String execute() throws Exception{
 			}
 			else
 			{
-				sql+=" and facA='"+bz+"'";
+				if(bz.equals("0"))
+				{
+					sql+=" and facA='0'";
+				}
+				else
+				{
+					sql+=" and facA!='0'";
+				}
+				
 			}
 		}
 		else
@@ -196,7 +211,14 @@ public String execute() throws Exception{
 			}
 			else
 			{
-				sql+=" and facA='"+bz+"'";
+				if(bz.equals("0"))
+				{
+					sql+=" and facA='0'";
+				}
+				else
+				{
+					sql+=" and facA!='0'";
+				}
 			}
 		}
 		if(!sql.equals(""))

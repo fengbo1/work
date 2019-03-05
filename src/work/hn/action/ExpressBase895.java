@@ -7,6 +7,8 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -81,7 +83,7 @@ public class ExpressBase895 {
 				OutputStream out = new FileOutputStream(filePath);
 				ex.exportExcel("895基础数据",headers, dataset, out);
 				out.close();
-			//	JOptionPane.showMessageDialog(null, "导出成功！");
+		//		JOptionPane.showMessageDialog(null, "导出成功！");
 				System.out.println("excel导出成功！");
 			} catch (FileNotFoundException e) {
 				// TODO 自动生成的 catch 块

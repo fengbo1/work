@@ -48,7 +48,11 @@ $('#bz').attr('value',${bz});
 $('#factor').attr('value','${factor}');	
 highlight(); 
 });
-
+	function viewdetail(part)
+	{
+		window.open("<%=path%>/ruleshbzdetail.action?pool=1&bianhao="+part,"","height=700,width=950,top=100,left=290,scrollbars=yes,resizable=yes");
+		window.close();
+	}
 	function toupdate(idd)
 	{
 		window.open("<%=path%>/rulehgtoupdate.action?id="+idd+"&pool=${pool}","","height=700,width=950,top=100,left=290,scrollbars=yes,resizable=yes");
@@ -70,7 +74,7 @@ highlight();
 	}
 	function importhg()
 	{
-		window.open("<%=path%>/ruletoadd.action?plate="+plate,"","height=700,width=950,top=100,left=290,scrollbars=yes,resizable=yes");
+		window.open("<%=path%>/page/rulecase/hegui/rulehgimport.jsp","","height=700,width=950,top=100,left=290,scrollbars=yes,resizable=yes");
 	}
 	function highlight()
 	 {
@@ -104,11 +108,11 @@ highlight();
  <link href="<%=path%>/css/table_back.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-  
+ 		 <form action="<%=path%>/rulehg.action" method="post">
 			<table align="center" style="width: 1200px;height:500px">
 			<tr>
 			<td>
-			<form action="<%=path%>/rulehg.action" method="post">
+			
 			<table  height="80" align="center" cellpadding="0" cellspacing="2">
 				<tr class="qq">
 					<td
@@ -236,7 +240,7 @@ highlight();
 					</td>
 				</tr>
 			</table>
-			</form>
+			
 			</td>
 			</tr>
 			<tr>
@@ -292,9 +296,8 @@ highlight();
 						</td>
 						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
-								<span>
-									${rule.fujian}
-								</span>
+									${rule.fujian}<br/>
+									<a href="#" onclick="viewdetail(${rule.part});">总行审核标准</a> 
 							</div>
 						</td>
 						<td height="25" width="60px" align="center" valign="middle">
@@ -325,6 +328,8 @@ highlight();
 							<a	href="<%=path%>/rulehg.action?zhuan=1&pool=${pool}&bz=${bz}&factor=${factor}&word=${word}&currentPage=${nextPage}"
 							style="padding-right: 30px;color: #104E8B">下一页</a> 	
 									共有 ${totalRows} 条记录
+							第<input style="width:30px" type="text" name="currentPage"/>页
+								<input type="submit" value="跳转"/>			
 								</div></td>
 							<td colspan="3">
 								<div align="center">
@@ -340,5 +345,6 @@ highlight();
 			</td>
 			</tr>	
 			</table>
+			</form>
 	</body>
 </html>

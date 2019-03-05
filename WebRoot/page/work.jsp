@@ -325,7 +325,7 @@ $(document).ready(function(){
 								<input align="right" name="logout" type="button" value="修改密码" onclick="frame('pwdmodify')" />&nbsp;
 								 <input align="right" name="logout" type="button" value="安全退出" onclick="location='<%=path%>/page/userinfo/logout.jsp'" />
 								 -->
-								<input align="right" name="logout" type="button" value="安全退出" onclick="location='http://172.20.10.7:8080/office/mainccb.jsp'" />
+								<input align="right" name="logout" type="button" value="返回首页" onclick="location='http://64.244.180.111/office/mainccb.jsp'" />
 								 
 								<input type="hidden" id="id" name="id" value="${id}"/>
 							</p>

@@ -27,7 +27,7 @@ public class RcRuleSearch {
 	public String execute() throws Exception{
 		
 		RcRuleDAO rrdao = new RcRuleDAO();
-		String sql = "select distinct(plate) from t_rc_rule order by locate(substr(plate,1,1),'外合稽反其')";
+		String sql = "select distinct(plate) from t_rc_rule where plate!='合规业务' order by locate(substr(plate,1,1),'外合稽反其')";
 		Session session = HibernateSessionFactory.getSession();
 		Transaction trans = session.beginTransaction();
 		list = session.createSQLQuery(sql).list();

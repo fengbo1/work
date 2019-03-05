@@ -64,6 +64,7 @@ public class RuleHgImport {
 	}
 	public String execute() throws Exception{
 		int nn=0;
+		String zy = "";
 		YearSeason ys = new YearSeason();
 		RcRuleDAO rrdao = new RcRuleDAO();
 		String realpath = Tld.uploadpath+"rulecase/";
@@ -88,8 +89,22 @@ public class RuleHgImport {
 			nn = sheet.getLastRowNum()+1;
 			if(type.equals("fugai"))//如果选择的是覆盖，先删除原表
 			{
-				String sql = "delete from t_rc_rule where plate='合规业务'";
-				session.createSQLQuery(sql).executeUpdate();
+				if(pool.equals("shbz"))
+				{
+					String sql = "delete from t_rc_rule where plate='合规业务' and pool='1'";
+					session.createSQLQuery(sql).executeUpdate();
+				}
+				else if(pool.equals("fhcy"))
+				{
+					String sql = "delete from t_rc_rule where plate='合规业务' and pool='2'";
+					session.createSQLQuery(sql).executeUpdate();
+				}
+				else if(pool.equals("yjbf"))
+				{
+					String sql = "delete from t_rc_rule where plate='合规业务' and pool='3'";
+					session.createSQLQuery(sql).executeUpdate();
+				}
+				
 			}
 			for (int i = 1; i < nn; i++) {
 				RcRule rr = new RcRule();
@@ -101,21 +116,43 @@ public class RuleHgImport {
 					if(pool.equals("shbz"))
 					{
 						rr.setPool("1");
+						rr.setPart(uu.getCellValue(currentRow.getCell(0), 0));
+						rr.setArea(uu.getCellValue(currentRow.getCell(1), 0));
+						rr.setRemark(uu.getCellValue(currentRow.getCell(2), 0));
+						rr.setRule(uu.getCellValue(currentRow.getCell(3), 0));
+						rr.setFacB(uu.getCellValue(currentRow.getCell(5), 0));
+						rr.setFacC(uu.getCellValue(currentRow.getCell(6), 0));
+						zy = uu.getCellValue(currentRow.getCell(7), 0).trim();
 					}
 					else if(pool.equals("fhcy"))
 					{
 						rr.setPool("2");
-						rr.setFactor(uu.getCellValue(currentRow.getCell(9), 0));
+						rr.setPart(uu.getCellValue(currentRow.getCell(0), 0));
+						rr.setArea(uu.getCellValue(currentRow.getCell(1), 0));
+						rr.setRemark(uu.getCellValue(currentRow.getCell(2), 0));
+						rr.setRule(uu.getCellValue(currentRow.getCell(3), 0));
+						rr.setExp(uu.getCellValue(currentRow.getCell(4), 0));
+						rr.setFactor(uu.getCellValue(currentRow.getCell(5), 0));
+						rr.setFacB(uu.getCellValue(currentRow.getCell(6), 0));
+						rr.setFacC(uu.getCellValue(currentRow.getCell(7), 0));
+						zy = uu.getCellValue(currentRow.getCell(8), 0).trim();
+						
 					}
 					else if(pool.equals("yjbf"))
 					{
 						rr.setPool("3");
-						rr.setFactor(uu.getCellValue(currentRow.getCell(9), 0));
-						rr.setFujian(uu.getCellValue(currentRow.getCell(10), 0));
+						rr.setFactor(uu.getCellValue(currentRow.getCell(1), 0));
+						rr.setPart(uu.getCellValue(currentRow.getCell(2), 0));
+						rr.setArea(uu.getCellValue(currentRow.getCell(3), 0));
+						rr.setFacC(uu.getCellValue(currentRow.getCell(4), 0));
+						rr.setFacB(uu.getCellValue(currentRow.getCell(5), 0));
+						rr.setFujian(uu.getCellValue(currentRow.getCell(6), 0));
+						rr.setRule(uu.getCellValue(currentRow.getCell(7), 0));
+						rr.setExp(uu.getCellValue(currentRow.getCell(8), 0));
+						rr.setRemark(uu.getCellValue(currentRow.getCell(9), 0));
+						zy="在用";
 					}
-					rr.setPart(uu.getCellValue(currentRow.getCell(0), 0));
-					rr.setArea(uu.getCellValue(currentRow.getCell(1), 0));
-					String zy = uu.getCellValue(currentRow.getCell(2), 0).trim();
+					
 					if(zy.equals("在用"))
 					{
 						rr.setFacA("1");
@@ -124,12 +161,6 @@ public class RuleHgImport {
 					{
 						rr.setFacA("0");
 					}
-					rr.setFacB(uu.getCellValue(currentRow.getCell(3), 0));
-					rr.setFacC(uu.getCellValue(currentRow.getCell(4), 0));
-					rr.setRule(uu.getCellValue(currentRow.getCell(5), 0));
-					rr.setExp(uu.getCellValue(currentRow.getCell(6), 0));
-					rr.setRenewexp(uu.getCellValue(currentRow.getCell(7), 0));
-					rr.setRemark(uu.getCellValue(currentRow.getCell(8), 0));
 					
 					if(zy!=null&&!zy.equals(""))
 					rrdao.merge(rr);

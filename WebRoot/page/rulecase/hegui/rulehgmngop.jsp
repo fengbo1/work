@@ -41,23 +41,31 @@
 					
 					<div class="four_columns">
 						<div class="two_columns_text">
-							当前配置维护操作岗:&nbsp;
+							当前维护操作岗:&nbsp;
 						</div>
 						<div class="four_columns_input">
-						 	${mngop }
+						 	${mngop}
 						</div>
 					<div class="clear"></div>
 				</div>
 				<div class="four_columns">
 						<div class="two_columns_text">
-							配置维护操作岗:&nbsp;
+							新增维护操作岗:&nbsp;
 					</div>
 					<div class="four_columns_input">
 						<input type="text" name="mngop" value=""/>
 					</div>
 					<div class="clear"></div>
 				</div>
-				
+				<div class="four_columns">
+						<div class="two_columns_text">
+							删除维护操作岗:&nbsp;
+					</div>
+					<div class="four_columns_input">
+						<input type="text" name="delmngop" value=""/>
+					</div>
+					<div class="clear"></div>
+				</div>
 				<div  style="padding-left:340px">
 						<input type="button" class="but"  value="关闭页面" onclick="javascript:window.close();">
 						&nbsp;&nbsp;

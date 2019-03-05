@@ -103,7 +103,7 @@ public class HeGuiCode {
 		}
 		else if(input.equals("fac_a"))
 		{
-			result = "在用标志";
+			result = "在用标志";//0停用，1在用
 		}
 		else if(input.equals("fac_b"))
 		{

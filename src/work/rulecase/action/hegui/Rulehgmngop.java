@@ -22,6 +22,7 @@ public class Rulehgmngop {
 public String execute() throws Exception{
 		
 		String hql = "";
+		mngop = "";
 		Session session = HibernateSessionFactory.getSession();
 		Transaction trans = session.beginTransaction();
 		try {
@@ -33,7 +34,11 @@ public String execute() throws Exception{
 			}
 			else
 			{
-				mngop = list.get(0).getName();
+				for(int i=0;i<list.size();i++)
+				{
+					mngop+=list.get(i).getName();
+					mngop+="、";
+				}
 			}
 		}catch (Exception e) {
 			trans.rollback();//出错回滚

@@ -8,10 +8,10 @@ public class Tld {
 	/**
 	 * 路径
 	 */
-//	public static final String path = "C:/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/work/" ;
+	public static final String path = "C:/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/work/" ;
 //	public static final String uploadpath = "D:/import/work/";
 	public static final String uploadpath = "C:/import/work/";
-	public static final String path ="C:/Program Files/apache-tomcat-7.0.59/webapps/work/";
+//	public static final String path ="C:/Program Files/apache-tomcat-7.0.59/webapps/work/";
 	public static final String chars26 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	/**
 	 * 下载路径

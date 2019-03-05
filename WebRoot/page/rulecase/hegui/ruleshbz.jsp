@@ -113,11 +113,11 @@ highlight();
  <link href="<%=path%>/css/table_back.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-  
+  <form action="<%=path%>/rulehg.action" method="post">
 			<table align="center" style="width: 1200px;height:500px">
 			<tr>
 			<td>
-			<form action="<%=path%>/rulehg.action" method="post">
+			
 			<table  height="80" align="center" cellpadding="0" cellspacing="2">
 				<tr class="qq">
 					<td
@@ -245,7 +245,7 @@ highlight();
 					</td>
 				</tr>
 			</table>
-			</form>
+			
 			</td>
 			</tr>
 			<tr>
@@ -301,11 +301,9 @@ highlight();
 						</td>
 						<td height="25" width="60px" align="center" valign="middle">
 							<div align="center" style="word-break:break-all;">
-								<span>
 									<c:forEach items="${rule.factor}" var="fac" varStatus="status">
 									<a href="#" onclick="viewdetail(${fac.id});">${fac.factor}</a> 
 									</c:forEach>
-								</span>
 							</div>
 						</td>
 						<td height="25" width="60px" align="center" valign="middle">
@@ -336,6 +334,8 @@ highlight();
 							<a	href="<%=path%>/rulehg.action?zhuan=1&pool=${pool}&bz=${bz}&factor=${factor}&word=${word}&currentPage=${nextPage}"
 							style="padding-right: 30px;color: #104E8B">下一页</a> 	
 									共有 ${totalRows} 条记录
+							第<input style="width:30px" type="text" name="currentPage"/>页
+								<input type="submit" value="跳转"/>	
 								</div></td>
 							<td colspan="3">
 								<div align="center">
@@ -354,5 +354,6 @@ highlight();
 			</td>
 			</tr>	
 			</table>
+			</form>
 	</body>
 </html>

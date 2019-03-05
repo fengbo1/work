@@ -18,6 +18,7 @@ import work.mycalendar.dao.MyCalendarDAO;
 import work.mycalendar.pojo.MyCalendar;
 import work.no.dao.NoDAO;
 import work.util.GeneralCheck;
+import work.util.Tld;
 import work.util.UploadUtil;
 
 import ccb.hibernate.HibernateSessionFactory;
@@ -57,7 +58,7 @@ public class ImportJhsx {
 		JhsxDAO jdao = new JhsxDAO();
 		MyCalendarDAO mcdao = new MyCalendarDAO();
 		UploadUtil uu = new UploadUtil();
-		String realpath = "D:/import/work/";
+		String realpath = Tld.uploadpath;
 		if ((file != null)&&(fileFileName.length()>0)) {
 			File savefile = new File(new File(realpath), fileFileName);
 			if (!savefile.getParentFile().exists())

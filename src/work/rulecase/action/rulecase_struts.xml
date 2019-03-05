@@ -77,6 +77,9 @@
 			<result name="success2">/page/rulecase/hegui/rulefhcydetail.jsp</result>
 			<result name="success3">/page/rulecase/hegui/ruleyjbfdetail.jsp</result>
 		</action>
+		<action name="ruleshbzdetail" class="work.rulecase.action.hegui.RuleShbzDetail">
+			<result name="success">/page/rulecase/hegui/ruleshbzdetail.jsp</result>
+		</action>
 		<action name="rulehgupdate" class="work.rulecase.action.hegui.RuleHgUpdate">
 			<result name="success">/page/public/successclose.jsp</result>
 		</action>
