@@ -380,7 +380,6 @@ $(document).ready(function(){
 								</ul>
 							</li>
 							 -->
-							<c:if test="${chu!='3'}"> 
 							<li class="a">
 								<div class="header">
 									<span class="label">数据管理</span>
@@ -398,7 +397,6 @@ $(document).ready(function(){
 									 -->
 								</ul>
 							</li>
-							</c:if>
 							</c:if>
 							
 							<li class="a">
